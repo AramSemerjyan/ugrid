@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ugrid_Example' do
+  pod 'ugrid', :path => '../'
+
+  target 'ugrid_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
