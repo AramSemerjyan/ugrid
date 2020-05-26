@@ -27,6 +27,11 @@ For simplicity `UserDefaults` is used to save size for each cell index path. If 
 UGrid is still in development. It do it's best to bring the fastest calculation time for reordering cells, simplest implementation and usability. Though if you have a better calculation idea (which is most likely) you can create your own calculation class by simply adopting to `IGridCalculation` protocol and use `setCalculationLogic(_:)` on `UGridFlowLayout` instance to change calculation logic.
 Also if you like to store sizes on your own, you can adopt to `IGridSizeRepository` protocol and set new storing mechanism by calling `setSizeRepository(_:)` on on `UGridFlowLayout` instance.
 
+## What is planned to be done
+* Support for horizontal scroll direction. Currently only vertical is supported
+* Section support. Currently only one section is supported
+* Drag and Drop support
+
 ## Requirements
 XCode 11+
 iOS 11+
