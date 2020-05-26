@@ -22,7 +22,7 @@ pod 'ugrid'
 
 ## Author
 
-semerjyan.aram@gmail.com, aram.semerjyan@binomial.xyz
+Bug Creator
 
 ## License
 
