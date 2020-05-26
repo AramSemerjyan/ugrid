@@ -63,7 +63,6 @@ class GridCalculationLogic: IGridCalculation {
             let size: GridSize.SizeType = sizes[a.indexPath] ?? .small
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
-            print(attributesInRow.count)
             a.frame = findEmptySpace(inRow: attributesInRow, forSize: a.frame.size, startingYCoord: startYCoord, withSpacing: _layout.inset.left)
 
             if a.frame.maxX == (_layout.layoutWidth - _layout.inset.left) {
