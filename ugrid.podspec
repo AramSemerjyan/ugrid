@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ugrid'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ugrid.'
+  s.summary          = 'Cusomt grid view based on UICollectionView'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,14 +21,15 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/semerjyan.aram@gmail.com/ugrid'
+  s.homepage         = 'https://github.com/AramSemerjyan/ugrid.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'semerjyan.aram@gmail.com' => 'aram.semerjyan@binomial.xyz' }
-  s.source           = { :git => 'https://github.com/semerjyan.aram@gmail.com/ugrid.git', :tag => s.version.to_s }
+  s.author           = { 'BugCreator' => 'semerjyan.aram@gmail.com' }
+  s.source           = { :git => 'https://github.com/AramSemerjyan/ugrid.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'ugrid/Classes/**/*'
   

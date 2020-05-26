@@ -1,0 +1,16 @@
+PODS:
+  - ugrid (0.1.0)
+
+DEPENDENCIES:
+  - ugrid (from `../`)
+
+EXTERNAL SOURCES:
+  ugrid:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ugrid: 502a693ce72aeefae22602436a2cdc6e1129fb5f
+
+PODFILE CHECKSUM: 6d9ac2eb4de5d8b52cf79fe45cda7250d2018169
+
+COCOAPODS: 1.8.4

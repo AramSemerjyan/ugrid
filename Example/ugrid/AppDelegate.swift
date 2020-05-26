@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ugrid
 //
-//  Created by semerjyan.aram@gmail.com on 05/26/2020.
-//  Copyright (c) 2020 semerjyan.aram@gmail.com. All rights reserved.
+//  Created by Aram Semerjyan on 05/26/2020.
+//  Copyright (c) 2020 Aram Semerjyan. All rights reserved.
 //
 
 import UIKit

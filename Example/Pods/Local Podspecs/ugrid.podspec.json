@@ -1,0 +1,22 @@
+{
+  "name": "ugrid",
+  "version": "0.1.0",
+  "summary": "A short description of ugrid.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/semerjyan.aram@gmail.com/ugrid",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "semerjyan.aram@gmail.com": "aram.semerjyan@binomial.xyz"
+  },
+  "source": {
+    "git": "https://github.com/semerjyan.aram@gmail.com/ugrid.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ugrid/Classes/**/*"
+}
