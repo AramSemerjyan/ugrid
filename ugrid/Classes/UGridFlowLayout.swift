@@ -71,6 +71,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
         }
     }
 
+    // Added test comment
     // MARK: - private vars
     private lazy var _calculation: IGridCalculation = {
         return GridCalculationLogic(_layoutScreen,
