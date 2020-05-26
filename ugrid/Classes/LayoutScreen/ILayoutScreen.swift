@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Just a wrapper to pass only needed info to the calculation class
+// so that calculation algorith knows on wich screen it's working on
 protocol ILayoutScreen {
     var inset: UIEdgeInsets { get }
     var layoutWidth: CGFloat { get }

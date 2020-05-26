@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015A59FFFF2240F05CD2C44200F91653 /* GridCollectionLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B71614B4E86B4C29A4F728D4D88484 /* GridCollectionLayoutAttributes.swift */; };
 		0A53711DED95A4B291404E5C81EFA4D5 /* Pods-ugrid_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9776D2FC4F6B0ACE55A2FD368A8638B8 /* Pods-ugrid_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		139D4AD4EAF7CF809F995305CADEA630 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831140DFE9D362B4030290509E430E1 /* GridSize.swift */; };
 		173BDECDDB5D3FDBB8087F9C78FA51CC /* GridCalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB6DAFF3B5A02FDBC408F67014D829 /* GridCalculationLogic.swift */; };
@@ -79,7 +78,6 @@
 		A28D683FA27285A53BDD1DDBE70CCA69 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831140DFE9D362B4030290509E430E1 /* GridSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
 		B6B0263B93778A27470F9D6E02DB1436 /* Pods-ugrid_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ugrid_Example-frameworks.sh"; sourceTree = "<group>"; };
-		B8B71614B4E86B4C29A4F728D4D88484 /* GridCollectionLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridCollectionLayoutAttributes.swift; sourceTree = "<group>"; };
 		C9521684333BE87491A16334EA168AC5 /* ugrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ugrid-dummy.m"; sourceTree = "<group>"; };
 		E0A62E2D7C7FBAD558CD6137EE717E74 /* Pods-ugrid_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E29195F3518A04701C0B434C614CBB52 /* Pods-ugrid_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ugrid_Example.modulemap"; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				DCF914B795D869FAA055871E71BA6EAB /* GridSize */,
 				B32273EDE5D16CB450795FFF0EFDA3BE /* GridSizeStore */,
 				9E4DEB28051CD51AC2AA3313C18CA1AF /* LayoutScreen */,
-				28442B6687FD44DA8DD92CE2C5EC68C6 /* Model */,
 				505263C7385A70706FFA1588D7F0880F /* Pod */,
 				08A4D8D9049F6BE8F4FAB34F2F40E558 /* Support Files */,
 			);
@@ -148,15 +145,6 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/ugrid";
-			sourceTree = "<group>";
-		};
-		28442B6687FD44DA8DD92CE2C5EC68C6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B8B71614B4E86B4C29A4F728D4D88484 /* GridCollectionLayoutAttributes.swift */,
-			);
-			name = Model;
-			path = ugrid/Classes/Model;
 			sourceTree = "<group>";
 		};
 		2D13CD33C62FDB2663B589D39B40910F /* Calculation */ = {
@@ -466,7 +454,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				173BDECDDB5D3FDBB8087F9C78FA51CC /* GridCalculationLogic.swift in Sources */,
-				015A59FFFF2240F05CD2C44200F91653 /* GridCollectionLayoutAttributes.swift in Sources */,
 				139D4AD4EAF7CF809F995305CADEA630 /* GridSize.swift in Sources */,
 				82B9170F1AF24592DAD329B5473E9BB7 /* GridSizeRepository.swift in Sources */,
 				E1717B066CEACA2A6C0ECEDC25B4CC57 /* IConfigure.swift in Sources */,

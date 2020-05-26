@@ -8,9 +8,11 @@
 
 import UIKit
 
-protocol IGridSizeRepository {
-
-    func size(forIndexPath indexPath: IndexPath) -> GridSize.SizeType
-    func set(size: GridSize.SizeType, forIndexPath indexPath: IndexPath)
+// This protocol is responsible for storing size for the item with index path
+// and retriving size for item with index path
+// currently UserDefaults is used as a store
+public protocol IGridSizeRepository {
+    func size(forIndexPath indexPath: IndexPath) -> SizeType
+    func set(size: SizeType, forIndexPath indexPath: IndexPath)
     func swap(from: IndexPath, to: IndexPath)
 }

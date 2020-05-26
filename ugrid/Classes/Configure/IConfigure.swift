@@ -9,7 +9,6 @@
 import UIKit
 
 protocol IConfigure {
-
     func setCalculationLogic(_ logic: IGridCalculation)
     func setSizeRepository(_ repo: IGridSizeRepository)
 }

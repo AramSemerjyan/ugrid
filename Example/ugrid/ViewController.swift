@@ -13,23 +13,41 @@ class ViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var changeGridTypeItem: UIBarButtonItem!
 
     // MARK: - private vars
     private var _dataSource: [Int] = Array(0...100)
     private var _layout = UGridFlowLayout()
+    private var _layoutType: LayoutType = .less
 
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpCollectionView()
+        setUpNavigationBar()
     }
 
     // MARK: - private funcs
+    private func setUpNavigationBar() {
+        changeGridTypeItem.title = LayoutType.more.rawValue
+    }
+
     private func setUpCollectionView() {
         collectionView.collectionViewLayout = _layout
+
         collectionView.dataSource = self
         collectionView.delegate = self
+
+        _layout.setType(_layoutType)
+    }
+    
+    @IBAction func changeGridType(_ sender: UIBarButtonItem) {
+        sender.title = _layoutType.rawValue
+
+        _layoutType.toggle()
+
+        _layout.setType(_layoutType)
     }
 }
 

@@ -71,7 +71,6 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
         }
     }
 
-    // Added test comment
     // MARK: - private vars
     private lazy var _calculation: IGridCalculation = {
         return GridCalculationLogic(_layoutScreen,
@@ -91,7 +90,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
     private var _cachedAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
 
-    private var _sizes = [IndexPath: GridSize.SizeType]()
+    private var _sizes = [IndexPath: SizeType]()
     private var _draggingLastIndexPath: IndexPath?
 
     var isDragging = false {
@@ -127,7 +126,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
     public override func prepare() {
         var array = [UICollectionViewLayoutAttributes]()
-        var size = [IndexPath: GridSize.SizeType]()
+        var size = [IndexPath: SizeType]()
 
         for i in 0..<_collectView.numberOfItems(inSection: 0) {
 

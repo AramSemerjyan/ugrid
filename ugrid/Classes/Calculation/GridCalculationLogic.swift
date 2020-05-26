@@ -40,34 +40,39 @@ class GridCalculationLogic: IGridCalculation {
         return _contentSize
     }
 
-    func setLayoutType(_ type: LayoutType) {
-        _gridSize.setType(type)
-    }
-
     func reset() {
         _furthestBlockRect = .zero
         _contentSize = .zero
     }
 
     @discardableResult
-    func calculate(attributes: [UICollectionViewLayoutAttributes]?, withItemSizes sizes: [IndexPath: GridSize.SizeType]) -> [UICollectionViewLayoutAttributes]? {
+    func calculate(attributes: [UICollectionViewLayoutAttributes]?, withItemSizes sizes: [IndexPath: SizeType]) -> [UICollectionViewLayoutAttributes]? {
 
         guard let attributes = attributes else { return nil }
 
         guard !attributes.isEmpty else { return attributes }
 
         var attributesInRow = [UICollectionViewLayoutAttributes]()
+
+        // Y coord from where algorithm should start to look for empy space
         var startYCoord: CGFloat = 0.0
 
         attributes.forEach { (a) in
-            let size: GridSize.SizeType = sizes[a.indexPath] ?? .small
+            let size: SizeType = sizes[a.indexPath] ?? .small
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
             a.frame = findEmptySpace(inRow: attributesInRow, forSize: a.frame.size, startingYCoord: startYCoord, withSpacing: _layout.inset.left)
 
+            // This will decrease complexity
+            // If there is fully complete line, like:
+            // if grid type is 'less', and there is [small, small, small, small] in one line
+            // this will remove all four attributes, because there is no point for having them
+            // while looking for empty space
             if a.frame.maxX == (_layout.layoutWidth - _layout.inset.left) {
                 let height = attributesInRow.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
 
+                // Check that heigh for all items in the line is same
+                // if it's not, that means that there can be an empy space to place new item
                 if height == a.frame.maxY {
                     attributesInRow.removeAll()
 
@@ -100,6 +105,7 @@ class GridCalculationLogic: IGridCalculation {
         while true {
 
             // X coord change
+            // on every iteration go to right with GridSize.SizeType.small width (currently 50)
             while searchPoint.x + size.width <= rectWidth {
                 spaceRect.origin = searchPoint
 
@@ -118,6 +124,8 @@ class GridCalculationLogic: IGridCalculation {
                 searchPoint.x = searchPoint.x + _gridSize.smallGrid.width + spacing
             }
 
+            // if there is no empty space on the line, go bottom with GridSize.SizeType.small height (currently 50)
+            // to and start looking with X position equal to 0
             searchPoint.y = searchPoint.y + _gridSize.smallGrid.height + spacing
             searchPoint.x = spacing
         }

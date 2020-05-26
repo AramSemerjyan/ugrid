@@ -8,11 +8,20 @@
 
 import UIKit
 
-public enum LayoutType {
-    case less
-    case more
+// Detects how many items should be placed on the layout
+// 'less':
+//      small - 4 in the row
+//      middle - 2 in the row
+//      bid - 1 in the row, no any item can be placed in the row
+// 'more':
+//      small - 6 in the row
+//      middle - 3 in the row
+//      bid - 1 in the row, but still can be places 4 small or 1 middle size item in the same row
+public enum LayoutType: String {
+    case less = "Less items"
+    case more = "More items"
 
-    mutating func toggle() {
+    public mutating func toggle() {
         switch self {
         case .less:
             self = .more
@@ -22,7 +31,8 @@ public enum LayoutType {
     }
 }
 
-protocol IGridCalculation {
+// this protocol is responsible for calculating and placing grid items on the screen
+public protocol IGridCalculation {
 
     var gridType: LayoutType { get set }
 
@@ -31,7 +41,7 @@ protocol IGridCalculation {
     var contentSize: CGSize { get }
 
     @discardableResult
-    func calculate(attributes: [UICollectionViewLayoutAttributes]?, withItemSizes sizes: [IndexPath: GridSize.SizeType]) -> [UICollectionViewLayoutAttributes]?
+    func calculate(attributes: [UICollectionViewLayoutAttributes]?, withItemSizes sizes: [IndexPath: SizeType]) -> [UICollectionViewLayoutAttributes]?
 
     func reset()
 }

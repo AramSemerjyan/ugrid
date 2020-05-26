@@ -9,23 +9,6 @@
 import UIKit
 
 class GridSize {
-
-    enum SizeType: String {
-        case small = "grid_size_small"
-        case middle = "grid_size_middle"
-        case big = "grid_size_big"
-
-        mutating func toggole() {
-            if self == .big {
-                self = .small
-            } else if self == .small {
-                self = .middle
-            } else {
-                self = .big
-            }
-        }
-    }
-
     private var _layoutType: LayoutType
     private var _layout: ILayoutScreen
 
@@ -34,7 +17,7 @@ class GridSize {
         _layout = layoutScreen
     }
 
-    private func itemsInRow(forSize size: SizeType) -> CGFloat {
+    func itemsInRow(forSize size: SizeType) -> CGFloat {
         switch _layoutType {
         case .less:
             switch size {
