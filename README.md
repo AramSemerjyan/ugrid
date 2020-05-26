@@ -33,8 +33,8 @@ Also if you like to store sizes on your own, you can adopt to `IGridSizeReposito
 * Drag and Drop support
 
 ## Requirements
-XCode 11+
-iOS 11+
+* XCode 11+
+* iOS 11+
 
 ## Installation
 
