@@ -9,8 +9,12 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Features
+UGrid offers three different sizes for cells. Toggle between them and let UGridFlowLayout to hanlde the rest. All empty spaces will be used. UGridView is willing to be like Windows Phone home page grid view :)
+
 ## Requirements
-iOS 11
+XCode 11+
+iOS 11+
 
 ## Installation
 
