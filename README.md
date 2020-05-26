@@ -1,4 +1,4 @@
-# ugrid
+# UGrid
 
 [![CI Status](https://img.shields.io/travis/semerjyan.aram@gmail.com/ugrid.svg?style=flat)](https://travis-ci.org/semerjyan.aram@gmail.com/ugrid)
 [![Version](https://img.shields.io/cocoapods/v/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
