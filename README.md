@@ -1,9 +1,25 @@
-# UGrid
 
-[![CI Status](https://img.shields.io/travis/semerjyan.aram@gmail.com/ugrid.svg?style=flat)](https://travis-ci.org/semerjyan.aram@gmail.com/ugrid)
-[![Version](https://img.shields.io/cocoapods/v/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
-[![License](https://img.shields.io/cocoapods/l/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
-[![Platform](https://img.shields.io/cocoapods/p/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
+
+<p align="center">
+   <img src="https://github.com/AramSemerjyan/ugrid/blob/master/New%20Project-3.png" width=300 height=90 />
+</p>
+<p>
+    &nbsp;
+</p>
+<p align="center">
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/v/ugrid.svg?style=flat"
+            alt="Version">
+    </a>
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/l/ugrid.svg?style=flat"
+            alt="License">
+    </a>
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/p/ugrid.svg?style=flat"
+            alt="Platform">
+    </a>
+</p>
 
 ## Example
 
