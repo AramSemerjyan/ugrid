@@ -3,9 +3,6 @@
 <p align="center">
    <img src="https://github.com/AramSemerjyan/ugrid/blob/master/New%20Project-3.png" width=300 height=90 />
 </p>
-<p>
-    &nbsp;
-</p>
 <p align="center">
     <a href="https://cocoapods.org/pods/ugrid">
         <img src="https://img.shields.io/cocoapods/v/ugrid.svg?style=flat"
