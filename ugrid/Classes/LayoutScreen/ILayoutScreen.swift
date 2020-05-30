@@ -16,5 +16,5 @@ protocol ILayoutScreen {
     var layoutWidth: CGFloat { get }
     var layoutHeight: CGFloat { get }
 
-    var scrollingDirection: UICollectionViewScrollDirection { get set }
+    var scrollingDirection: UICollectionView.ScrollDirection { get set }
 }

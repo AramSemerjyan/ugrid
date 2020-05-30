@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     private var _dataSource: [Int] = Array(0...100)
     private var _layout = UGridFlowLayout()
     private var _layoutType: LayoutType = .less
-    private var _dirrection: UICollectionViewScrollDirection = .vertical
+    private var _dirrection: UICollectionView.ScrollDirection = .vertical
 
     private var _dirrectionTitle: String {
         _dirrection == .vertical ? "Horizontal" : "Vertical"

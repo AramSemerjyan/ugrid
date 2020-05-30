@@ -107,7 +107,7 @@ class EmptySpaceFinderLogic: IGridCalculationLogicFindEmptySpace {
         return spaceRect
     }
 
-    func findEmptySpace(forDirrection dirrection: UICollectionViewScrollDirection, withAttributes attributes: [UICollectionViewLayoutAttributes], length: CGFloat, size: CGSize, startingCoord coord: CGFloat, andSpacing spacing: CGFloat) -> CGRect {
+    func findEmptySpace(forDirrection dirrection: UICollectionView.ScrollDirection, withAttributes attributes: [UICollectionViewLayoutAttributes], length: CGFloat, size: CGSize, startingCoord coord: CGFloat, andSpacing spacing: CGFloat) -> CGRect {
         if dirrection == .vertical {
             return findEmptySpaceInVertical(inRow: attributes,
                                             withWidth: length,

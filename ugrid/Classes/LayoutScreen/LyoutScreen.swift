@@ -11,10 +11,10 @@ import UIKit
 class LyoutScreen: ILayoutScreen {
 
     private var _collectionView: UICollectionView!
-    private var _direction: UICollectionViewScrollDirection!
+    private var _direction: UICollectionView.ScrollDirection!
 
     init(_ collectionView: UICollectionView,
-         scrollingDirrection direction: UICollectionViewScrollDirection = .vertical
+         scrollingDirrection direction: UICollectionView.ScrollDirection = .vertical
     ) {
         _collectionView = collectionView
         _direction = direction
@@ -32,7 +32,7 @@ class LyoutScreen: ILayoutScreen {
         .init(top: 0, left: 10, bottom: 0, right: 10)
     }
 
-    var scrollingDirection: UICollectionViewScrollDirection {
+    var scrollingDirection: UICollectionView.ScrollDirection {
         set { _direction = newValue }
 
         get { _direction }

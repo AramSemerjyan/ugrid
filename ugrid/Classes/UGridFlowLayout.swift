@@ -209,7 +209,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "scrollDirection", let newValue = change?[NSKeyValueChangeKey.newKey] as? Int, let newDirection = UICollectionViewScrollDirection.init(rawValue: newValue) {
+        if keyPath == "scrollDirection", let newValue = change?[NSKeyValueChangeKey.newKey] as? Int, let newDirection = UICollectionView.ScrollDirection.init(rawValue: newValue) {
             _layoutScreen.scrollingDirection = newDirection
 
             invalidateLayout()

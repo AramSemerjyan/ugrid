@@ -22,7 +22,7 @@ protocol IGridCalculationLogicFindEmptySpace {
                                     withSpacing spacing: CGFloat
     ) -> CGRect
 
-    func findEmptySpace(forDirrection dirrection: UICollectionViewScrollDirection,
+    func findEmptySpace(forDirrection dirrection: UICollectionView.ScrollDirection,
                         withAttributes attributes: [UICollectionViewLayoutAttributes],
                         length: CGFloat,
                         size: CGSize,
