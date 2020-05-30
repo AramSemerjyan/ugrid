@@ -25,7 +25,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Features
 UGrid offers three different sizes for cells. Toggle between them and let UGridFlowLayout to hanlde the rest. All empty spaces will be used. UGridView is willing to be like Windows Phone home page grid view :)
 
-<img src="https://github.com/AramSemerjyan/ugrid/blob/master/Resources/grid_view_.gif" width="300" height="680"/>
+<img src="https://github.com/AramSemerjyan/ugrid/blob/master/Resources/grid_view_3.gif" width="300" height="680"/>
 
 ## Implementation
 Just assign instance of `UGridFlowLayout` to your collection view's `collectionViewLayout` property and you're good to go. If you want to toggle between size
