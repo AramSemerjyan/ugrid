@@ -51,8 +51,7 @@ class GridCalculationLogic: IGridCalculation {
 
     @discardableResult
     func calculate(attributes: [UICollectionViewLayoutAttributes]?,
-                   withItemSizes sizes: [IndexPath: SizeType],
-                   forDirrection dirrection: UICollectionViewScrollDirection
+                   withItemSizes sizes: [IndexPath: SizeType]
     ) -> [UICollectionViewLayoutAttributes]? {
 
         guard let attributes = attributes else { return nil }
@@ -68,7 +67,7 @@ class GridCalculationLogic: IGridCalculation {
             let size: SizeType = sizes[a.indexPath] ?? .small
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
-            let spaceRect = dirrection == .vertical ?
+            let spaceRect = _layout.scrollingDirection == .vertical ?
                 _emptySpaceFinder.findEmptySpaceInVertical(inRow: attributesInRow,
                                                            withWidth: _layout.layoutWidth,
                                                            forSize: a.frame.size,
@@ -89,7 +88,7 @@ class GridCalculationLogic: IGridCalculation {
             // if grid type is 'less', and there is [small, small, small, small] in one line
             // this will remove all four attributes, because there is no point for having them
             // while looking for empty space
-            if dirrection == .vertical {
+            if _layout.scrollingDirection == .vertical {
                 if a.frame.maxX == (_layout.layoutWidth - _layout.inset.left) {
                     let height = attributesInRow.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
 

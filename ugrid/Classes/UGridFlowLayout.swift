@@ -162,7 +162,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
             _sizes = size
         }
 
-        _calculation.calculate(attributes: array, withItemSizes: _sizes, forDirrection: scrollDirection)
+        _calculation.calculate(attributes: array, withItemSizes: _sizes)
 
         if _loggign == .enable {
             print("UGRID:: Perpare: \(_cachedAttributes)")
