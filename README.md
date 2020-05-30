@@ -1,9 +1,22 @@
-# UGrid
 
-[![CI Status](https://img.shields.io/travis/semerjyan.aram@gmail.com/ugrid.svg?style=flat)](https://travis-ci.org/semerjyan.aram@gmail.com/ugrid)
-[![Version](https://img.shields.io/cocoapods/v/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
-[![License](https://img.shields.io/cocoapods/l/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
-[![Platform](https://img.shields.io/cocoapods/p/ugrid.svg?style=flat)](https://cocoapods.org/pods/ugrid)
+
+<p align="center">
+   <img src="https://github.com/AramSemerjyan/ugrid/blob/master/Resources/logo.png" width=300 height=90 />
+</p>
+<p align="center">
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/v/ugrid.svg?style=flat"
+            alt="Version">
+    </a>
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/l/ugrid.svg?style=flat"
+            alt="License">
+    </a>
+    <a href="https://cocoapods.org/pods/ugrid">
+        <img src="https://img.shields.io/cocoapods/p/ugrid.svg?style=flat"
+            alt="Platform">
+    </a>
+</p>
 
 ## Example
 
@@ -12,10 +25,25 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Features
 UGrid offers three different sizes for cells. Toggle between them and let UGridFlowLayout to hanlde the rest. All empty spaces will be used. UGridView is willing to be like Windows Phone home page grid view :)
 
-<img src="https://github.com/AramSemerjyan/ugrid/blob/master/grid_view.gif" width="300" height="680"/>
+<img src="https://github.com/AramSemerjyan/ugrid/blob/master/Resources/grid_view.gif" width="300" height="680"/>
 
 ## Implementation
 Just assign instance of `UGridFlowLayout` to your collection view's `collectionViewLayout` property and you're good to go. If you want to toggle between size
+
+#### Toggle between Layout Types
+There is two Layout Types: `less` or `more`
+
+With `less` type in one row there will be:
+* 4 small grid items
+* 2 middle grid items
+* 1 big grid item and there won't be any space for any other grid item
+
+With `more` type in one row there will be:
+* 6 small grid items
+* 3 middle grid items
+* 1 big grid item, but there will be a space for 4 small grid items or 1 middle item in the smae row
+
+Layout Types could be toggled by calling `setType(_:)` and passing spacific `Layout Type`
 
 #### Toggle between sizes
 Just call `toggleSize(forIndexPath:)` On `UGridFlowLayout` instance. Layout will automaticall toggle between small, middle and big sizes.
