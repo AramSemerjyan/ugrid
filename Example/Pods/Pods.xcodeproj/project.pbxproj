@@ -23,6 +23,12 @@
 		83C0E3AC45E0E555422B38748A8C74A9 /* Pods-ugrid_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8549574AF27D5C5457F2F3F5B3293ADC /* Pods-ugrid_Example-dummy.m */; };
 		AB8BC68A402E28C9DF65FB3E12965152 /* IGridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75C810F73AF7B7C63E90DCB7426A31 /* IGridSize.swift */; };
 		AD48E4BA8BAD506E6707B9B2AB238DE5 /* Pods-ugrid_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F205703002EC55F196201A8183C8870B /* Pods-ugrid_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE9CB0DF2482D34D002E4BB9 /* IGridItemsInRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0DD2482D2CA002E4BB9 /* IGridItemsInRow.swift */; };
+		AE9CB0E12482D363002E4BB9 /* GridItemsInRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E02482D363002E4BB9 /* GridItemsInRow.swift */; };
+		AE9CB0E42482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E32482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift */; };
+		AE9CB0E62482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E52482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift */; };
+		AE9CB0E92482E412002E4BB9 /* IGridCalculationClearCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */; };
+		AE9CB0EB2482E88E002E4BB9 /* ClearCalculatinoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */; };
 		C1768BD855B3142726DFFA83CA3F1FC5 /* ILayoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D58A7880B1A2177446A08B0078D8E7 /* ILayoutScreen.swift */; };
 		E1717B066CEACA2A6C0ECEDC25B4CC57 /* IConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66DA5FCA890B1FEA648AF1C2B040F7D /* IConfigure.swift */; };
 		F138F6C54CFF84D2DC459FDC88995472 /* ugrid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB07E2CD66EE54E2BFB7C8E4CF43C703 /* ugrid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +83,12 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A28D683FA27285A53BDD1DDBE70CCA69 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831140DFE9D362B4030290509E430E1 /* GridSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
+		AE9CB0DD2482D2CA002E4BB9 /* IGridItemsInRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridItemsInRow.swift; sourceTree = "<group>"; };
+		AE9CB0E02482D363002E4BB9 /* GridItemsInRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemsInRow.swift; sourceTree = "<group>"; };
+		AE9CB0E32482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridCalculationLogicFindEmptySpace.swift; sourceTree = "<group>"; };
+		AE9CB0E52482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySpaceFinderLogic.swift; sourceTree = "<group>"; };
+		AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridCalculationClearCache.swift; sourceTree = "<group>"; };
+		AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCalculatinoCache.swift; sourceTree = "<group>"; };
 		B6B0263B93778A27470F9D6E02DB1436 /* Pods-ugrid_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ugrid_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C9521684333BE87491A16334EA168AC5 /* ugrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ugrid-dummy.m"; sourceTree = "<group>"; };
 		E0A62E2D7C7FBAD558CD6137EE717E74 /* Pods-ugrid_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +162,8 @@
 		2D13CD33C62FDB2663B589D39B40910F /* Calculation */ = {
 			isa = PBXGroup;
 			children = (
+				AE9CB0E72482E3E8002E4BB9 /* ClearCalculationCache */,
+				AE9CB0E22482D64C002E4BB9 /* EmptySpaceFinder */,
 				FAAB6DAFF3B5A02FDBC408F67014D829 /* GridCalculationLogic.swift */,
 				28DB4DEFE61A0A04761E9D9B077E39EB /* IGridCalculation.swift */,
 			);
@@ -220,6 +234,33 @@
 			path = ugrid/Classes/LayoutScreen;
 			sourceTree = "<group>";
 		};
+		AE9CB0DC2482D2B7002E4BB9 /* GridItemCount */ = {
+			isa = PBXGroup;
+			children = (
+				AE9CB0DD2482D2CA002E4BB9 /* IGridItemsInRow.swift */,
+				AE9CB0E02482D363002E4BB9 /* GridItemsInRow.swift */,
+			);
+			path = GridItemCount;
+			sourceTree = "<group>";
+		};
+		AE9CB0E22482D64C002E4BB9 /* EmptySpaceFinder */ = {
+			isa = PBXGroup;
+			children = (
+				AE9CB0E32482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift */,
+				AE9CB0E52482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift */,
+			);
+			path = EmptySpaceFinder;
+			sourceTree = "<group>";
+		};
+		AE9CB0E72482E3E8002E4BB9 /* ClearCalculationCache */ = {
+			isa = PBXGroup;
+			children = (
+				AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */,
+				AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */,
+			);
+			path = ClearCalculationCache;
+			sourceTree = "<group>";
+		};
 		B32273EDE5D16CB450795FFF0EFDA3BE /* GridSizeStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +318,7 @@
 		DCF914B795D869FAA055871E71BA6EAB /* GridSize */ = {
 			isa = PBXGroup;
 			children = (
+				AE9CB0DC2482D2B7002E4BB9 /* GridItemCount */,
 				A831140DFE9D362B4030290509E430E1 /* GridSize.swift */,
 				EA75C810F73AF7B7C63E90DCB7426A31 /* IGridSize.swift */,
 			);
@@ -387,6 +429,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					2D1E3B8E01953D85D3C796C2A0B9EF96 = {
+						LastSwiftMigration = 1140;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -455,12 +502,18 @@
 			files = (
 				173BDECDDB5D3FDBB8087F9C78FA51CC /* GridCalculationLogic.swift in Sources */,
 				139D4AD4EAF7CF809F995305CADEA630 /* GridSize.swift in Sources */,
+				AE9CB0E42482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift in Sources */,
 				82B9170F1AF24592DAD329B5473E9BB7 /* GridSizeRepository.swift in Sources */,
 				E1717B066CEACA2A6C0ECEDC25B4CC57 /* IConfigure.swift in Sources */,
+				AE9CB0DF2482D34D002E4BB9 /* IGridItemsInRow.swift in Sources */,
+				AE9CB0EB2482E88E002E4BB9 /* ClearCalculatinoCache.swift in Sources */,
 				54B5AE5DB59EC4C7ACDCA067324B2711 /* IGridCalculation.swift in Sources */,
+				AE9CB0E12482D363002E4BB9 /* GridItemsInRow.swift in Sources */,
+				AE9CB0E92482E412002E4BB9 /* IGridCalculationClearCache.swift in Sources */,
 				AB8BC68A402E28C9DF65FB3E12965152 /* IGridSize.swift in Sources */,
 				7607889ACDA2BBFD378405BFD6BE1B05 /* IGridSizeRepository.swift in Sources */,
 				C1768BD855B3142726DFFA83CA3F1FC5 /* ILayoutScreen.swift in Sources */,
+				AE9CB0E62482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift in Sources */,
 				64DC40F39BA85B4E5B494FBCB34F1739 /* LyoutScreen.swift in Sources */,
 				1C558F9DAF4F5AA1824D579DC718C990 /* ugrid-dummy.m in Sources */,
 				48CCD6C64F2E86F09E08D52C9FB41F74 /* UGridFlowLayout.swift in Sources */,
@@ -524,6 +577,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -547,6 +601,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -722,6 +777,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -745,6 +801,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -11,16 +11,30 @@ import UIKit
 class LyoutScreen: ILayoutScreen {
 
     private var _collectionView: UICollectionView!
+    private var _direction: UICollectionViewScrollDirection!
 
-    init(_ collectionView: UICollectionView) {
+    init(_ collectionView: UICollectionView,
+         scrollingDirrection direction: UICollectionViewScrollDirection = .vertical
+    ) {
         _collectionView = collectionView
+        _direction = direction
     }
 
     var layoutWidth: CGFloat {
-        return _collectionView.frame.width
+        _collectionView.frame.width
+    }
+
+    var layoutHeight: CGFloat {
+        _collectionView.frame.height
     }
 
     var inset: UIEdgeInsets {
-        return .init(top: 0, left: 10, bottom: 0, right: 10)
+        .init(top: 0, left: 10, bottom: 0, right: 10)
+    }
+
+    var scrollingDirection: UICollectionViewScrollDirection {
+        set { _direction = newValue }
+
+        get { _direction }
     }
 }

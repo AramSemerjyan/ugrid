@@ -50,6 +50,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b9M-Z5-cxi">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="080-HZ-1y3">
+                            <connections>
+                                <action selector="changeDirrection:" destination="vXZ-lx-hvc" id="l7t-Rq-BVV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change Grid Type" id="PMD-6f-W6c">
                             <connections>
                                 <action selector="changeGridType:" destination="vXZ-lx-hvc" id="8t4-wX-mGF"/>
@@ -57,6 +62,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="changeDirrectionItem" destination="080-HZ-1y3" id="QZU-oC-Nzu"/>
                         <outlet property="changeGridTypeItem" destination="PMD-6f-W6c" id="cro-BQ-dsD"/>
                         <outlet property="collectionView" destination="965-jU-yPB" id="rLp-9V-mRV"/>
                     </connections>

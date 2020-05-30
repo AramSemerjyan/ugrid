@@ -15,6 +15,16 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
         case disable
     }
 
+    public override init() {
+        super.init()
+
+        addObservers()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - public funcs
     public func setType(_ type: LayoutType) {
         self._calculation.gridType = type
@@ -72,14 +82,21 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     // MARK: - private vars
+    private lazy var _gridInRow: IGridSize = {
+        return GridSize(gridType: .more,
+                        layoutScreen: _layoutScreen,
+                        gridInRow: GridItemsInRow()
+        )
+
+    }()
+
     private lazy var _calculation: IGridCalculation = {
         return GridCalculationLogic(_layoutScreen,
-                                    gridSize: GridSize(gridType: .more, layoutScreen: _layoutScreen)
-        )
+                                    gridSize: _gridInRow)
     }()
 
     private lazy var _layoutScreen: ILayoutScreen = {
-        return LyoutScreen(_collectView)
+        return LyoutScreen(_collectView, scrollingDirrection: scrollDirection)
     }()
 
     private lazy var _repo: IGridSizeRepository = {
@@ -145,7 +162,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
             _sizes = size
         }
 
-        _calculation.calculate(attributes: array, withItemSizes: _sizes)
+        _calculation.calculate(attributes: array, withItemSizes: _sizes, forDirrection: scrollDirection)
 
         if _loggign == .enable {
             print("UGRID:: Perpare: \(_cachedAttributes)")
@@ -156,7 +173,11 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
         var rect = _collectView.frame.size
 
-        rect.height = _calculation.furthestBlockRect.maxY
+        if scrollDirection == .vertical {
+            rect.height = _calculation.furthestBlockRect.maxY
+        } else {
+            rect.width = _calculation.furthestBlockRect.maxX
+        }
 
         if _loggign == .enable {
             print("UGRID:: ContentSize: \(rect)")
@@ -186,6 +207,23 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     public override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return _cachedAttributes[indexPath]
     }
+
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "scrollDirection", let newValue = change?[NSKeyValueChangeKey.newKey] as? Int, let newDirection = UICollectionViewScrollDirection.init(rawValue: newValue) {
+            _layoutScreen.scrollingDirection = newDirection
+
+            invalidateLayout()
+        }
+    }
+
+    // MARK: - private funcs
+    private func addObservers() {
+        addScrollingDirrectionObserver()
+    }
+
+    private func addScrollingDirrectionObserver() {
+        self.addObserver(self, forKeyPath: "scrollDirection", options: .new, context: nil)
+    }
 }
 
 extension UGridFlowLayout: IConfigure {
@@ -195,5 +233,9 @@ extension UGridFlowLayout: IConfigure {
 
     func setSizeRepository(_ repo: IGridSizeRepository) {
         _repo = repo
+    }
+
+    func setGridItemsInRow(_ itemsInRow: IGridItemsInRow) {
+        _gridInRow.setGirdItemsInRow(itemsInRow)
     }
 }

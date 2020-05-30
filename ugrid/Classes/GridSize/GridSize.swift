@@ -11,45 +11,28 @@ import UIKit
 class GridSize {
     private var _layoutType: LayoutType
     private var _layout: ILayoutScreen
+    private var _gridInRow: IGridItemsInRow
 
-    init(gridType: LayoutType, layoutScreen: ILayoutScreen) {
+    init(gridType: LayoutType, layoutScreen: ILayoutScreen, gridInRow: IGridItemsInRow) {
         _layoutType = gridType
         _layout = layoutScreen
+        _gridInRow = gridInRow
     }
 
-    func itemsInRow(forSize size: SizeType) -> CGFloat {
-        switch _layoutType {
-        case .less:
-            switch size {
-            case .small:
-                return 4
-            case .middle:
-                return 2
-            case .big:
-                return 1
-            }
-        case .more:
-            switch size {
-            case .small:
-                return 6
-            case .middle:
-                return 3
-            case .big:
-                return 1
-            }
-        }
+    private var row: CGFloat {
+        _layout.scrollingDirection == .vertical ? _layout.layoutWidth : _layout.layoutHeight
     }
 
     private func size(forCount count: CGFloat) -> CGSize {
-        let layout = _layout.layoutWidth - (count + 1) * _layout.inset.left
+        let layout = row - (count + 1) * _layout.inset.left
         let itemWidth = layout / count
 
         return .init(width: itemWidth, height: itemWidth)
     }
 
     private func getItemWidth(forGridSize size: SizeType) -> CGFloat {
-        let count = itemsInRow(forSize: size)
-        let layout = _layout.layoutWidth - (count + 1) * _layout.inset.left
+        let count = _gridInRow.itemsInRow(forSizeType: size, andLayoutType: _layoutType)
+        let layout = row - (count + 1) * _layout.inset.left
 
         return layout / count
     }
@@ -92,5 +75,11 @@ extension GridSize: IGridSize {
         case .more:
             return .init(width: itemWidth * 6 / 9.1, height: middleGrid.height)
         }
+    }
+}
+
+extension GridSize: IGridSizeConfigurable {
+    func setGirdItemsInRow(_ itemsInRow: IGridItemsInRow) {
+        _gridInRow = itemsInRow
     }
 }

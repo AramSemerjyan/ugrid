@@ -24,15 +24,18 @@ public enum SizeType: String {
     }
 }
 
+protocol IGridSizeConfigurable {
+    func setGirdItemsInRow(_ itemsInRow: IGridItemsInRow)
+}
+
 // This protocol is responsible for getting item size for SizeType
 // and for getting how many items for the specific SizeType
 // could be placed on the layout for specific type (less/more)
-protocol IGridSize {
+protocol IGridSize: IGridSizeConfigurable {
     var smallGrid: CGSize { get }
     var middleGrid: CGSize { get }
     var bigGrid: CGSize { get }
 
     func setType(_ layoutType: LayoutType)
-    func itemsInRow(forSize size: SizeType) -> CGFloat
     func getSize(forGridSizeType sizeType: SizeType) -> CGSize
 }

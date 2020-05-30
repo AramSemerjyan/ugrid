@@ -41,7 +41,10 @@ public protocol IGridCalculation {
     var contentSize: CGSize { get }
 
     @discardableResult
-    func calculate(attributes: [UICollectionViewLayoutAttributes]?, withItemSizes sizes: [IndexPath: SizeType]) -> [UICollectionViewLayoutAttributes]?
+    func calculate(attributes: [UICollectionViewLayoutAttributes]?,
+                   withItemSizes sizes: [IndexPath: SizeType],
+                   forDirrection: UICollectionViewScrollDirection
+    ) -> [UICollectionViewLayoutAttributes]?
 
     func reset()
 }
