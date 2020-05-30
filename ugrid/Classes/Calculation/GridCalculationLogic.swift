@@ -67,6 +67,7 @@ class GridCalculationLogic: IGridCalculation {
             let size: SizeType = sizes[a.indexPath] ?? .small
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
+            //TODO: need to be reviewed
             let spaceRect = _layout.scrollingDirection == .vertical ?
                 _emptySpaceFinder.findEmptySpaceInVertical(inRow: attributesInRow,
                                                            withWidth: _layout.layoutWidth,
