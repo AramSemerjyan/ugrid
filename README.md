@@ -56,7 +56,6 @@ UGrid is still in development. It do it's best to bring the fastest calculation 
 Also if you like to store sizes on your own, you can adopt to `IGridSizeRepository` protocol and set new storing mechanism by calling `setSizeRepository(_:)` on on `UGridFlowLayout` instance.
 
 ## What is planned to be done
-* Support for horizontal scroll direction. Currently only vertical is supported
 * Section support. Currently only one section is supported
 * Drag and Drop support
 
