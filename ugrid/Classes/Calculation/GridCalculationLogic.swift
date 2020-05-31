@@ -12,18 +12,30 @@ class GridCalculationLogic: IGridCalculation {
 
     // MARK: - private vars
     private var _repo: IGridSizeRepository!
-    private var _layout: ILayoutScreen!
+    private var _layout: ILayout!
     private var _gridSize: IGridSize!
 
-    private lazy var _emptySpaceFinder: IGridCalculationLogicFindEmptySpace = {
-        EmptySpaceFinderLogic(_gridSize)
+    private lazy var _emptySpaceFinder: [Int: IGridCalculationLogicFindEmptySpace] = {
+        [
+            UICollectionView.ScrollDirection.vertical.rawValue: VerticalEmptySpaceFinder(gridSize: self._gridSize, layout: self._layout),
+            UICollectionView.ScrollDirection.horizontal.rawValue: HorizontalEmptySpaceFinder(gridSize: self._gridSize, layout: self._layout)
+        ]
+    }()
+
+    // Search for the rows that has same maxY for Vertical case or same maxX for Horizontal case
+    // if there is rows, they should be removed from the array of attributes to simplify calculation and increase speed
+    private lazy var _findCompleteRows: [Int: IGridCompleteRowFinder] = {
+        [
+            UICollectionView.ScrollDirection.vertical.rawValue: ClearVerticalCompleteRow(self._layout),
+            UICollectionView.ScrollDirection.horizontal.rawValue: ClearHorizontalCompleteRow(self._layout)
+        ]
     }()
 
     private var _furthestBlockRect: CGRect = .zero
     private var _contentSize: CGSize = .zero
 
     // MARK: - life cycle
-    required init(_ layout: ILayoutScreen, gridSize: IGridSize) {
+    required init(_ layout: ILayout, gridSize: IGridSize) {
         _layout = layout
         _repo = GridSizeRepository()
         _gridSize = gridSize
@@ -68,19 +80,8 @@ class GridCalculationLogic: IGridCalculation {
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
             //TODO: need to be reviewed
-            let spaceRect = _layout.scrollingDirection == .vertical ?
-                _emptySpaceFinder.findEmptySpaceInVertical(inRow: attributesInRow,
-                                                           withWidth: _layout.layoutWidth,
-                                                           forSize: a.frame.size,
-                                                           startingYCoord: startCoord,
-                                                           withSpacing: _layout.inset.left
-                ) :
-                _emptySpaceFinder.findEmptySpaceInHorizontal(inRow: attributesInRow,
-                                                             withHeight: _layout.layoutHeight,
-                                                             forSize: a.frame.size,
-                                                             startingXCoord: startCoord,
-                                                             withSpacing: _layout.inset.left
-            )
+            let spaceRect = _emptySpaceFinder[_layout.scrollingDirection.rawValue]?
+                .findEmtpySpace(withAttributes: attributesInRow, forGridSize: a.frame.size, startCoord: startCoord) ?? .zero
 
             a.frame = spaceRect
 
@@ -89,40 +90,28 @@ class GridCalculationLogic: IGridCalculation {
             // if grid type is 'less', and there is [small, small, small, small] in one line
             // this will remove all four attributes, because there is no point for having them
             // while looking for empty space
-            if _layout.scrollingDirection == .vertical {
-                if a.frame.maxX == (_layout.layoutWidth - _layout.inset.left) {
-                    let height = attributesInRow.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
+            _findCompleteRows[_layout.scrollingDirection.rawValue]?.findCompleteRows(inAttributes: attributesInRow, beforeFrame: a.frame, completion: { (v) in
+                attributesInRow.removeAll()
 
-                    // Check that heigh for all items in the line is same
-                    // if it's not, that means that there can be an empy space to place new item
-                    if height == a.frame.maxY {
-                        attributesInRow.removeAll()
-
-                        startCoord = height
-                    }
-                }
-            } else {
-                if a.frame.maxY == (_layout.layoutHeight - _layout.inset.left) {
-                    let width = attributesInRow.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
-
-                    // Check that heigh for all items in the line is same
-                    // if it's not, that means that there can be an empy space to place new item
-                    if width == a.frame.maxX {
-                        attributesInRow.removeAll()
-
-                        startCoord = width
-                    }
-                }
-            }
+                startCoord = v
+            })
 
             attributesInRow.append(a)
         }
 
-        let blockPoint = attributesInRow.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame
+        if _layout.scrollingDirection == .vertical {
+            let blockPoint = attributesInRow.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame
 
-        _furthestBlockRect = blockPoint ?? .zero
+            _furthestBlockRect = blockPoint ?? .zero
 
-        _contentSize = .init(width: _furthestBlockRect.maxX, height: _layout.layoutHeight)
+            _contentSize = .init(width: _layout.layoutWidth, height: _furthestBlockRect.maxY)
+        } else {
+            let blockPoint = attributesInRow.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame
+
+            _furthestBlockRect = blockPoint ?? .zero
+
+            _contentSize = .init(width: _furthestBlockRect.maxX, height: _layout.layoutHeight)
+        }
 
         return attributes
     }

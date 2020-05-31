@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LyoutScreen: ILayoutScreen {
+class Layout {
 
     private var _collectionView: UICollectionView!
     private var _direction: UICollectionView.ScrollDirection!
@@ -19,6 +19,12 @@ class LyoutScreen: ILayoutScreen {
         _collectionView = collectionView
         _direction = direction
     }
+}
+
+extension Layout: ILayout {
+    var inset: UIEdgeInsets {
+        .init(top: 0, left: 10, bottom: 0, right: 10)
+    }
 
     var layoutWidth: CGFloat {
         _collectionView.frame.width
@@ -28,13 +34,10 @@ class LyoutScreen: ILayoutScreen {
         _collectionView.frame.height
     }
 
-    var inset: UIEdgeInsets {
-        .init(top: 0, left: 10, bottom: 0, right: 10)
-    }
-
     var scrollingDirection: UICollectionView.ScrollDirection {
         set { _direction = newValue }
 
         get { _direction }
     }
 }
+

@@ -7,26 +7,42 @@
 
 import UIKit
 
-//class ClearCalculatinoCache: IGridCalculationClearCache {
-//    func clearCacheForHorizontal() {
-//
-//    }
-//
-//    func clearCacheForVertical(attributes: inout [UICollectionViewLayoutAttributes],
-//                               withItemHeight height: CGFloat,
-//                               inLayout layout: ILayoutScreen,
-//                               cleared: @escaping () -> ()
-//    ) {
-//        if frame.maxX == (layout.layoutWidth - layout.inset.left) {
-//            let height = attributes.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
-//
-//            // Check that heigh for all items in the line is same
-//            // if it's not, that means that there can be an empy space to place new item
-//            if height == frame.maxY {
-//                attributes.removeAll()
-//
-//                cleared()
-//            }
-//        }
-//    }
-//}
+class ClearCompleteRow {
+    private(set) var layout: ILayoutScreen
+
+    init(_ layout: ILayoutScreen) {
+        self.layout = layout
+    }
+}
+
+class ClearVerticalCompleteRow: ClearCompleteRow { }
+
+extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
+    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
+        if frame.maxX >= (layout.layoutWidth - layout.inset.left) {
+            let height = attributes.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
+
+            // Check that heigh for all items in the line is same
+            // if it's not, that means that there can be an empy space to place new item
+            if height == frame.maxY {
+                completion(height)
+            }
+        }
+    }
+}
+
+class ClearHorizontalCompleteRow: ClearCompleteRow { }
+
+extension ClearHorizontalCompleteRow: IGridCompleteRowFinder {
+    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
+        if frame.maxY >= (layout.layoutHeight - layout.inset.left) {
+            let width = attributes.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
+
+            // Check that heigh for all items in the line is same
+            // if it's not, that means that there can be an empy space to place new item
+            if width == frame.maxX {
+                completion(width)
+            }
+        }
+    }
+}

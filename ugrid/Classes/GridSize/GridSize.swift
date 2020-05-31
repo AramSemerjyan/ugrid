@@ -10,12 +10,12 @@ import UIKit
 
 class GridSize {
     private var _layoutType: LayoutType
-    private var _layout: ILayoutScreen
+    private var _layout: ILayout
     private var _gridInRow: IGridItemsInRow
 
-    init(gridType: LayoutType, layoutScreen: ILayoutScreen, gridInRow: IGridItemsInRow) {
+    init(gridType: LayoutType, layout: ILayout, gridInRow: IGridItemsInRow) {
         _layoutType = gridType
-        _layout = layoutScreen
+        _layout = layout
         _gridInRow = gridInRow
     }
 
