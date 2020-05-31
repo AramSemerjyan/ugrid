@@ -17,7 +17,7 @@
 		48CCD6C64F2E86F09E08D52C9FB41F74 /* UGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C436231D50048A2C1E25A9821915A15 /* UGridFlowLayout.swift */; };
 		511A40757C97FC41F61A658183D4ACFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		54B5AE5DB59EC4C7ACDCA067324B2711 /* IGridCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB4DEFE61A0A04761E9D9B077E39EB /* IGridCalculation.swift */; };
-		64DC40F39BA85B4E5B494FBCB34F1739 /* LyoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98934619F6706D0CA896244515989AE8 /* LyoutScreen.swift */; };
+		64DC40F39BA85B4E5B494FBCB34F1739 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98934619F6706D0CA896244515989AE8 /* Layout.swift */; };
 		7607889ACDA2BBFD378405BFD6BE1B05 /* IGridSizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CD9A3F89844D4CA547FE0F4BABF42C /* IGridSizeRepository.swift */; };
 		82B9170F1AF24592DAD329B5473E9BB7 /* GridSizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E232AEA6AC4922116B8C755611900C9 /* GridSizeRepository.swift */; };
 		83C0E3AC45E0E555422B38748A8C74A9 /* Pods-ugrid_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8549574AF27D5C5457F2F3F5B3293ADC /* Pods-ugrid_Example-dummy.m */; };
@@ -27,9 +27,9 @@
 		AE9CB0E12482D363002E4BB9 /* GridItemsInRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E02482D363002E4BB9 /* GridItemsInRow.swift */; };
 		AE9CB0E42482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E32482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift */; };
 		AE9CB0E62482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E52482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift */; };
-		AE9CB0E92482E412002E4BB9 /* IGridCalculationClearCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */; };
+		AE9CB0E92482E412002E4BB9 /* IGridCompleteRowFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0E82482E412002E4BB9 /* IGridCompleteRowFinder.swift */; };
 		AE9CB0EB2482E88E002E4BB9 /* ClearCalculatinoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */; };
-		C1768BD855B3142726DFFA83CA3F1FC5 /* ILayoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D58A7880B1A2177446A08B0078D8E7 /* ILayoutScreen.swift */; };
+		C1768BD855B3142726DFFA83CA3F1FC5 /* ILayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D58A7880B1A2177446A08B0078D8E7 /* ILayout.swift */; };
 		E1717B066CEACA2A6C0ECEDC25B4CC57 /* IConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66DA5FCA890B1FEA648AF1C2B040F7D /* IConfigure.swift */; };
 		F138F6C54CFF84D2DC459FDC88995472 /* ugrid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB07E2CD66EE54E2BFB7C8E4CF43C703 /* ugrid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		33FBD5DEAB554AAFB5C452E8EEC692BD /* Pods-ugrid_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ugrid_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		39356F34BEBC9F372FFA6AE72C3C0B6C /* Pods-ugrid_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		40CD9A3F89844D4CA547FE0F4BABF42C /* IGridSizeRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridSizeRepository.swift; sourceTree = "<group>"; };
-		44D58A7880B1A2177446A08B0078D8E7 /* ILayoutScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ILayoutScreen.swift; sourceTree = "<group>"; };
+		44D58A7880B1A2177446A08B0078D8E7 /* ILayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ILayout.swift; sourceTree = "<group>"; };
 		4A4FB8D1B31A661B20B733B9B4C877D5 /* Pods-ugrid_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BB3582A02F7030145CA08E1EDACB444 /* ugrid.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ugrid.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		4DE87B13B8990F2AE233664E0BBE2470 /* Pods-ugrid_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		8F169AFAD5996A8602936EC2D20535BF /* Pods-ugrid_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ugrid_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		95D2261F9B37B9937F4DB0E76596B1D5 /* ugrid-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ugrid-Info.plist"; sourceTree = "<group>"; };
 		9776D2FC4F6B0ACE55A2FD368A8638B8 /* Pods-ugrid_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ugrid_Example-umbrella.h"; sourceTree = "<group>"; };
-		98934619F6706D0CA896244515989AE8 /* LyoutScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LyoutScreen.swift; sourceTree = "<group>"; };
+		98934619F6706D0CA896244515989AE8 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		9C6D90BE3955A50CE3E28BA4C5D33CB5 /* ugrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ugrid.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A28D683FA27285A53BDD1DDBE70CCA69 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +87,7 @@
 		AE9CB0E02482D363002E4BB9 /* GridItemsInRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemsInRow.swift; sourceTree = "<group>"; };
 		AE9CB0E32482D665002E4BB9 /* IGridCalculationLogicFindEmptySpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridCalculationLogicFindEmptySpace.swift; sourceTree = "<group>"; };
 		AE9CB0E52482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySpaceFinderLogic.swift; sourceTree = "<group>"; };
-		AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridCalculationClearCache.swift; sourceTree = "<group>"; };
+		AE9CB0E82482E412002E4BB9 /* IGridCompleteRowFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGridCompleteRowFinder.swift; sourceTree = "<group>"; };
 		AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCalculatinoCache.swift; sourceTree = "<group>"; };
 		B6B0263B93778A27470F9D6E02DB1436 /* Pods-ugrid_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ugrid_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C9521684333BE87491A16334EA168AC5 /* ugrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ugrid-dummy.m"; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 		2D13CD33C62FDB2663B589D39B40910F /* Calculation */ = {
 			isa = PBXGroup;
 			children = (
-				AE9CB0E72482E3E8002E4BB9 /* ClearCalculationCache */,
 				AE9CB0E22482D64C002E4BB9 /* EmptySpaceFinder */,
+				AE9CB0E72482E3E8002E4BB9 /* ClearCalculationCache */,
 				FAAB6DAFF3B5A02FDBC408F67014D829 /* GridCalculationLogic.swift */,
 				28DB4DEFE61A0A04761E9D9B077E39EB /* IGridCalculation.swift */,
 			);
@@ -227,8 +227,8 @@
 		9E4DEB28051CD51AC2AA3313C18CA1AF /* LayoutScreen */ = {
 			isa = PBXGroup;
 			children = (
-				44D58A7880B1A2177446A08B0078D8E7 /* ILayoutScreen.swift */,
-				98934619F6706D0CA896244515989AE8 /* LyoutScreen.swift */,
+				44D58A7880B1A2177446A08B0078D8E7 /* ILayout.swift */,
+				98934619F6706D0CA896244515989AE8 /* Layout.swift */,
 			);
 			name = LayoutScreen;
 			path = ugrid/Classes/LayoutScreen;
@@ -255,7 +255,7 @@
 		AE9CB0E72482E3E8002E4BB9 /* ClearCalculationCache */ = {
 			isa = PBXGroup;
 			children = (
-				AE9CB0E82482E412002E4BB9 /* IGridCalculationClearCache.swift */,
+				AE9CB0E82482E412002E4BB9 /* IGridCompleteRowFinder.swift */,
 				AE9CB0EA2482E88E002E4BB9 /* ClearCalculatinoCache.swift */,
 			);
 			path = ClearCalculationCache;
@@ -509,12 +509,12 @@
 				AE9CB0EB2482E88E002E4BB9 /* ClearCalculatinoCache.swift in Sources */,
 				54B5AE5DB59EC4C7ACDCA067324B2711 /* IGridCalculation.swift in Sources */,
 				AE9CB0E12482D363002E4BB9 /* GridItemsInRow.swift in Sources */,
-				AE9CB0E92482E412002E4BB9 /* IGridCalculationClearCache.swift in Sources */,
+				AE9CB0E92482E412002E4BB9 /* IGridCompleteRowFinder.swift in Sources */,
 				AB8BC68A402E28C9DF65FB3E12965152 /* IGridSize.swift in Sources */,
 				7607889ACDA2BBFD378405BFD6BE1B05 /* IGridSizeRepository.swift in Sources */,
-				C1768BD855B3142726DFFA83CA3F1FC5 /* ILayoutScreen.swift in Sources */,
+				C1768BD855B3142726DFFA83CA3F1FC5 /* ILayout.swift in Sources */,
 				AE9CB0E62482D6EE002E4BB9 /* EmptySpaceFinderLogic.swift in Sources */,
-				64DC40F39BA85B4E5B494FBCB34F1739 /* LyoutScreen.swift in Sources */,
+				64DC40F39BA85B4E5B494FBCB34F1739 /* Layout.swift in Sources */,
 				1C558F9DAF4F5AA1824D579DC718C990 /* ugrid-dummy.m in Sources */,
 				48CCD6C64F2E86F09E08D52C9FB41F74 /* UGridFlowLayout.swift in Sources */,
 			);

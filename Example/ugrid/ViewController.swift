@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeDirrectionItem: UIBarButtonItem!
 
     // MARK: - private vars
-    private var _dataSource: [Int] = Array(0...100)
+    private var _dataSource: [Int] = Array(0...1000)
     private var _layout = UGridFlowLayout()
     private var _layoutType: LayoutType = .less
     private var _dirrection: UICollectionView.ScrollDirection = .vertical
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     private func setUpCollectionView() {
         collectionView.collectionViewLayout = _layout
 
+        _layout.setGridItemsInRow(CustomSizeCountInrow())
         _layout.scrollDirection = _dirrection
 
         collectionView.dataSource = self
@@ -89,5 +90,31 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         _layout.toggleSize(forIndexPath: indexPath)
+    }
+}
+
+class CustomSizeCountInrow: IGridItemsInRow {
+    func itemsInRow(forSizeType size: SizeType, andLayoutType layout: LayoutType) -> CGFloat {
+
+        switch layout {
+        case .less:
+            switch size {
+            case .small:
+                return 4
+            case .middle:
+                return 2
+            case .big:
+                return 1
+            }
+        case .more:
+            switch size {
+            case .small:
+                return 6
+            case .middle:
+                return 3
+            case .big:
+                return 1
+            }
+        }
     }
 }

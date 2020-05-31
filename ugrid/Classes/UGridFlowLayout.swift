@@ -84,19 +84,19 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     // MARK: - private vars
     private lazy var _gridInRow: IGridSize = {
         return GridSize(gridType: .more,
-                        layoutScreen: _layoutScreen,
+                        layout: _layout,
                         gridInRow: GridItemsInRow()
         )
 
     }()
 
     private lazy var _calculation: IGridCalculation = {
-        return GridCalculationLogic(_layoutScreen,
+        return GridCalculationLogic(_layout,
                                     gridSize: _gridInRow)
     }()
 
-    private lazy var _layoutScreen: ILayoutScreen = {
-        return LyoutScreen(_collectView, scrollingDirrection: scrollDirection)
+    private lazy var _layout: ILayout = {
+        return Layout(_collectView, scrollingDirrection: scrollDirection)
     }()
 
     private lazy var _repo: IGridSizeRepository = {
@@ -210,7 +210,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "scrollDirection", let newValue = change?[NSKeyValueChangeKey.newKey] as? Int, let newDirection = UICollectionView.ScrollDirection.init(rawValue: newValue) {
-            _layoutScreen.scrollingDirection = newDirection
+            _layout.scrollingDirection = newDirection
 
             invalidateLayout()
         }
@@ -227,15 +227,15 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 }
 
 extension UGridFlowLayout: IConfigure {
-    func setCalculationLogic(_ logic: IGridCalculation) {
+    public func setCalculationLogic(_ logic: IGridCalculation) {
         _calculation = logic
     }
 
-    func setSizeRepository(_ repo: IGridSizeRepository) {
+    public func setSizeRepository(_ repo: IGridSizeRepository) {
         _repo = repo
     }
 
-    func setGridItemsInRow(_ itemsInRow: IGridItemsInRow) {
+    public func setGridItemsInRow(_ itemsInRow: IGridItemsInRow) {
         _gridInRow.setGirdItemsInRow(itemsInRow)
     }
 }

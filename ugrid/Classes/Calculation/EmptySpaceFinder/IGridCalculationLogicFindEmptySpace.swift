@@ -8,25 +8,8 @@
 import UIKit
 
 protocol IGridCalculationLogicFindEmptySpace {
-    func findEmptySpaceInVertical(inRow attributes: [UICollectionViewLayoutAttributes],
-                                  withWidth width: CGFloat,
-                                  forSize size: CGSize,
-                                  startingYCoord yCoord: CGFloat,
-                                  withSpacing spacing: CGFloat
-    ) -> CGRect
-
-    func findEmptySpaceInHorizontal(inRow attributes: [UICollectionViewLayoutAttributes],
-                                    withHeight height: CGFloat,
-                                    forSize size: CGSize,
-                                    startingXCoord xCoord: CGFloat,
-                                    withSpacing spacing: CGFloat
-    ) -> CGRect
-
-    func findEmptySpace(forDirrection dirrection: UICollectionView.ScrollDirection,
-                        withAttributes attributes: [UICollectionViewLayoutAttributes],
-                        length: CGFloat,
-                        size: CGSize,
-                        startingCoord coord: CGFloat,
-                        andSpacing spacing: CGFloat
+    func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes],
+                        forGridSize size: CGSize,
+                        startCoord: CGFloat
     ) -> CGRect
 }

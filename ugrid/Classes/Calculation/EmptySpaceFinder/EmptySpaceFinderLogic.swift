@@ -7,22 +7,23 @@
 
 import UIKit
 
-class EmptySpaceFinderLogic: IGridCalculationLogicFindEmptySpace {
+class EmptySpaceFinder {
+    private(set) var layout: ILayoutScreen
+    private(set) var gridSize: IGridSize
 
-    private var _gridSize: IGridSize
-
-    init(_ gridSize: IGridSize) {
-        _gridSize = gridSize
+    init(gridSize: IGridSize, layout: ILayoutScreen) {
+        self.gridSize = gridSize
+        self.layout = layout
     }
+}
 
-    func findEmptySpaceInVertical(inRow attributes: [UICollectionViewLayoutAttributes],
-                                  withWidth width: CGFloat,
-                                  forSize size: CGSize,
-                                  startingYCoord yCoord: CGFloat = 0.0,
-                                  withSpacing spacing: CGFloat = 0.0
-    ) -> CGRect {
-        var searchPoint = CGPoint.init(x: spacing, y: spacing + yCoord)
-        let rectWidth = width
+class VerticalEmptySpaceFinder: EmptySpaceFinder { }
+
+extension VerticalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
+    func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes], forGridSize size: CGSize, startCoord: CGFloat) -> CGRect {
+        let spacing = layout.inset.left
+        var searchPoint = CGPoint.init(x: spacing, y: startCoord + spacing)
+        let rectWidth = layout.layoutWidth
         var spaceRect = CGRect.init(origin: searchPoint, size: size)
 
         // Y coord change
@@ -49,26 +50,26 @@ class EmptySpaceFinderLogic: IGridCalculationLogicFindEmptySpace {
                     return spaceRect
                 }
 
-                searchPoint.x = searchPoint.x + _gridSize.smallGrid.width + spacing
+                searchPoint.x = searchPoint.x + gridSize.smallGrid.width + spacing
             }
 
             // if there is no empty space on the line, go bottom with GridSize.SizeType.small height (currently 50)
             // to and start looking with X position equal to 0
-            searchPoint.y = searchPoint.y + _gridSize.smallGrid.height + spacing
+            searchPoint.y = searchPoint.y + gridSize.smallGrid.height + spacing
             searchPoint.x = spacing
         }
 
         return spaceRect
     }
+}
 
-    func findEmptySpaceInHorizontal(inRow attributes: [UICollectionViewLayoutAttributes],
-                                    withHeight height: CGFloat,
-                                    forSize size: CGSize,
-                                    startingXCoord xCoord: CGFloat = 0.0,
-                                    withSpacing spacing: CGFloat = 0.0
-    ) -> CGRect {
-        var searchPoint = CGPoint.init(x: spacing + xCoord, y: spacing)
-        let rectHeight = height
+class HorizontalEmptySpaceFinder: EmptySpaceFinder { }
+
+extension HorizontalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
+    func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes], forGridSize size: CGSize, startCoord: CGFloat) -> CGRect {
+        let spacing = layout.inset.left
+        var searchPoint = CGPoint.init(x: spacing + startCoord, y: spacing)
+        let rectHeight = layout.layoutHeight
         var spaceRect = CGRect.init(origin: searchPoint, size: size)
 
         // Y coord change
@@ -94,34 +95,16 @@ class EmptySpaceFinderLogic: IGridCalculationLogicFindEmptySpace {
                 if isEmpty {
                     return spaceRect
                 }
-                
-                searchPoint.y = searchPoint.y + _gridSize.smallGrid.width + spacing
+
+                searchPoint.y = searchPoint.y + gridSize.smallGrid.width + spacing
             }
 
             // if there is no empty space on the line, go bottom with GridSize.SizeType.small height (currently 50)
             // to and start looking with X position equal to 0
-            searchPoint.x = searchPoint.x + _gridSize.smallGrid.height + spacing
+            searchPoint.x = searchPoint.x + gridSize.smallGrid.height + spacing
             searchPoint.y = spacing
         }
 
         return spaceRect
-    }
-
-    func findEmptySpace(forDirrection dirrection: UICollectionView.ScrollDirection, withAttributes attributes: [UICollectionViewLayoutAttributes], length: CGFloat, size: CGSize, startingCoord coord: CGFloat, andSpacing spacing: CGFloat) -> CGRect {
-        if dirrection == .vertical {
-            return findEmptySpaceInVertical(inRow: attributes,
-                                            withWidth: length,
-                                            forSize: size,
-                                            startingYCoord: coord,
-                                            withSpacing: spacing
-            )
-        } else {
-            return findEmptySpaceInHorizontal(inRow: attributes,
-                                              withHeight: length,
-                                              forSize: size,
-                                              startingXCoord: coord,
-                                              withSpacing: spacing
-            )
-        }
     }
 }
