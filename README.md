@@ -30,7 +30,7 @@ UGrid offers three different sizes for cells. Toggle between them and let UGridF
 ## Implementation
 Just assign instance of `UGridFlowLayout` to your collection view's `collectionViewLayout` property and you're good to go. If you want to toggle between size:
 
-```
+```swift
 import UIKit
 import ugrid
 
@@ -62,7 +62,7 @@ With `more` type in one row there will be:
 
 Layout Types could be toggled by calling `setType(_:)` and passing spacific `Layout Type`:
 
-```
+```swift
 ...
    override func viewDidLoad() {
       ...
@@ -77,7 +77,7 @@ Layout Types could be toggled by calling `setType(_:)` and passing spacific `Lay
 #### Toggle between sizes
 Just call `toggleSize(forIndexPath:)` On `UGridFlowLayout` instance. Layout will automaticall toggle between small, middle and big sizes:
 
-```
+```swift
 ...
    override func viewDidLoad() {
       ...
@@ -100,7 +100,7 @@ Also if you like to store sizes on your own, you can adopt to `IGridSizeReposito
 
 To change grid items count in the row, simply create a class that comforms to `IGridItemsInRow` and set it to `UGridFlowLayout` instance. For exmaple, to have 3 items in the row for `less` mode instead of default 4, create a new class called `CustomSizeCountInrow`:
 
-```
+```swift
 class CustomSizeCountInrow: IGridItemsInRow {
     func itemsInRow(forSizeType size: SizeType, andLayoutType layout: LayoutType) -> CGFloat {
 
@@ -130,7 +130,7 @@ class CustomSizeCountInrow: IGridItemsInRow {
 
 and set it:
 
-```
+```swift
 ...
    override func viewDidLoad() {
       ...
