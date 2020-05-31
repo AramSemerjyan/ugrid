@@ -19,7 +19,7 @@ class ClearVerticalCompleteRow: ClearCompleteRow { }
 
 extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-                if frame.maxX == (layout.layoutWidth - layout.inset.left) {
+        if frame.maxX >= (layout.layoutWidth - layout.inset.left) {
             let height = attributes.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
 
             // Check that heigh for all items in the line is same
@@ -35,7 +35,7 @@ class ClearHorizontalCompleteRow: ClearCompleteRow { }
 
 extension ClearHorizontalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-        if frame.maxY == (layout.layoutHeight - layout.inset.left) {
+        if frame.maxY >= (layout.layoutHeight - layout.inset.left) {
             let width = attributes.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
 
             // Check that heigh for all items in the line is same

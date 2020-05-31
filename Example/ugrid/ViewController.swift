@@ -93,6 +93,8 @@ extension ViewController: UICollectionViewDelegate {
     }
 }
 
+// If you want to use your own items count, you can create class that conform to IGridItemsInRow
+// and declare your own items count for the row
 class CustomSizeCountInrow: IGridItemsInRow {
     func itemsInRow(forSizeType size: SizeType, andLayoutType layout: LayoutType) -> CGFloat {
 
@@ -100,9 +102,9 @@ class CustomSizeCountInrow: IGridItemsInRow {
         case .less:
             switch size {
             case .small:
-                return 4
+                return 3
             case .middle:
-                return 2
+                return 1.5
             case .big:
                 return 1
             }
