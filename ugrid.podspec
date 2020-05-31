@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ugrid'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Cusomt grid view based on UICollectionView'
 
 # This description is used to generate tags and improve search results.
