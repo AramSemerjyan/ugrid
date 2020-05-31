@@ -25,9 +25,7 @@ class GridSize {
 
     private func size(forCount count: CGFloat) -> CGSize {
         let layout = row - (count + 1) * _layout.inset.left
-        var itemWidth = layout / count
-
-        itemWidth = (itemWidth*100).rounded()/100
+        let itemWidth = layout / count
 
         return .init(width: itemWidth, height: itemWidth)
     }
@@ -35,9 +33,8 @@ class GridSize {
     private func getItemWidth(forGridSize size: SizeType) -> CGFloat {
         let count = _gridInRow.itemsInRow(forSizeType: size, andLayoutType: _layoutType)
         let layout = row - (count + 1) * _layout.inset.left
-        let itemWidth = ((layout / count) * 100).rounded()/100
 
-        return itemWidth
+        return layout / count
     }
 }
 
