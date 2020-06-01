@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: Go to Example folder
-      run: cd Example/
+#     - name: Go to Example folder
+#       run: cd Example/
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild clean -scheme $SCHEME -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH build-for-testing | xcpretty --color --simple
+        set -o pipefail && xcodebuild clean -scheme $SCHEME ugrid-example "platform=iOS Simulator,name=iPhone 11 Pro Max" | xcpretty --color --simple
