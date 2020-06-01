@@ -22,4 +22,4 @@ jobs:
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild clean -scheme $SCHEME ugrid-example "platform=iOS Simulator,name=iPhone 11 Pro Max" | xcpretty --color --simple
+        set -o pipefail && xcodebuild clean -scheme $SCHEME ugrid-Example "platform=iOS Simulator,name=iPhone 11 Pro Max" | xcpretty --color --simple
