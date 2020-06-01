@@ -26,8 +26,8 @@ class GridCalculationLogic: IGridCalculation {
     // if there is rows, they should be removed from the array of attributes to simplify calculation and increase speed
     private lazy var _findCompleteRows: [Int: IGridCompleteRowFinder] = {
         [
-            UICollectionView.ScrollDirection.vertical.rawValue: ClearVerticalCompleteRow(self._layout),
-            UICollectionView.ScrollDirection.horizontal.rawValue: ClearHorizontalCompleteRow(self._layout)
+            UICollectionView.ScrollDirection.vertical.rawValue: ClearVerticalCompleteRow(self._layout, gridSize: self._gridSize),
+            UICollectionView.ScrollDirection.horizontal.rawValue: ClearHorizontalCompleteRow(self._layout, gridSize: self._gridSize)
         ]
     }()
 

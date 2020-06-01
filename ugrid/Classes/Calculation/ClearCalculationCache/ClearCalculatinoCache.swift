@@ -9,9 +9,11 @@ import UIKit
 
 class ClearCompleteRow {
     private(set) var layout: ILayoutScreen
+    private(set) var gridSize: IGridSize
 
-    init(_ layout: ILayoutScreen) {
+    init(_ layout: ILayoutScreen, gridSize: IGridSize) {
         self.layout = layout
+        self.gridSize = gridSize
     }
 }
 
@@ -19,7 +21,7 @@ class ClearVerticalCompleteRow: ClearCompleteRow { }
 
 extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-        if frame.maxX >= (layout.layoutWidth - layout.inset.left) {
+        if (frame.maxX + gridSize.smallGrid.width) >= (layout.layoutWidth - layout.inset.left) {
             let height = attributes.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
 
             // Check that heigh for all items in the line is same
@@ -35,7 +37,7 @@ class ClearHorizontalCompleteRow: ClearCompleteRow { }
 
 extension ClearHorizontalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-        if frame.maxY >= (layout.layoutHeight - layout.inset.left) {
+        if (frame.maxY + gridSize.smallGrid.height) >= (layout.layoutHeight - layout.inset.left) {
             let width = attributes.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
 
             // Check that heigh for all items in the line is same

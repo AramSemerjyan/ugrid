@@ -1,5 +1,5 @@
 PODS:
-  - ugrid (0.1.0)
+  - ugrid (0.1.7)
 
 DEPENDENCIES:
   - ugrid (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ugrid: 502a693ce72aeefae22602436a2cdc6e1129fb5f
+  ugrid: b6f3ccb2e74a8a0207c1b19a4aa676465b634a25
 
 PODFILE CHECKSUM: 6d9ac2eb4de5d8b52cf79fe45cda7250d2018169
 
