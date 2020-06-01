@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     private var _layoutType: LayoutType = .less
     private var _dirrection: UICollectionView.ScrollDirection = .vertical
 
+    // some change for test
+
     private var _dirrectionTitle: String {
         _dirrection == .vertical ? "Horizontal" : "Vertical"
     }
