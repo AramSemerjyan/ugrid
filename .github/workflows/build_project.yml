@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Go to Example folder
-    - run: cd Example/
+      run: cd Example/
       
     - name: Build
       run: |
