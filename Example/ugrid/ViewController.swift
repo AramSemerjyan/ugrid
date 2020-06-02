@@ -50,8 +50,6 @@ class ViewController: UIViewController {
         collectionView.delegate = self
 
         _layout.setType(_layoutType)
-
-        asdfja;lsdkfj ;kj
     }
 
     @IBAction func changeDirrection(_ sender: UIBarButtonItem) {
