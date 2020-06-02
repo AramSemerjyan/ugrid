@@ -20,6 +20,9 @@ jobs:
     - name: Go to Example folder
       run: cd Example/
 
+    - name: Print dirrectory
+      run: pwd
+
     - name: Install Cocoapods
       run: gem install cocoapods
       
