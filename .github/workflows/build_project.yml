@@ -19,4 +19,4 @@ jobs:
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild clean -workspace "Example/ugrid.xcworkspace" -scheme "ugrid-Example" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max" | xcpretty --color --simple
+        set -o pipefail && xcodebuild build -workspace "Example/ugrid.xcworkspace" -scheme "ugrid-Example" -destination "platform=iOS Simulator,name=iPhone 11 Pro Max" | xcpretty --color --simple
