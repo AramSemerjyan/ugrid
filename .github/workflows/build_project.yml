@@ -16,16 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: List items
-      run: ls Example/
-
-#     - name: Install Cocoapods
-#       run: gem install cocoapods
-      
-#     - name: Install pods
-#       run: pod install
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -configuration Debug | xcpretty --color --simple
+        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -configuration -list Debug | xcpretty --color --simple
