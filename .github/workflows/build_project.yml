@@ -16,12 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      
-    - name: Go to Example folder
-      run: cd Example/
-
-    - name: Print dirrectory
-      run: pwd
 
     - name: List items
       run: ls
