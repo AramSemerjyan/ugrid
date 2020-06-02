@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridSizeRepository: IGridSizeRepository {
+final class GridSizeRepository: IGridSizeRepository {
     private var _repo = UserDefaults.standard
 
     func size(forIndexPath indexPath: IndexPath) -> SizeType {

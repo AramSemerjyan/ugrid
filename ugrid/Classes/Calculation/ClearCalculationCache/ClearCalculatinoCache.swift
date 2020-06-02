@@ -17,7 +17,7 @@ class ClearCompleteRow {
     }
 }
 
-class ClearVerticalCompleteRow: ClearCompleteRow { }
+final class ClearVerticalCompleteRow: ClearCompleteRow { }
 
 extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
@@ -33,7 +33,7 @@ extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
     }
 }
 
-class ClearHorizontalCompleteRow: ClearCompleteRow { }
+final class ClearHorizontalCompleteRow: ClearCompleteRow { }
 
 extension ClearHorizontalCompleteRow: IGridCompleteRowFinder {
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {

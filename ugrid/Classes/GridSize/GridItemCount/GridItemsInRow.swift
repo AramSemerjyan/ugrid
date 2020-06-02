@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GridItemsInRow: IGridItemsInRow {
+final class GridItemsInRow: IGridItemsInRow {
     func itemsInRow(forSizeType size: SizeType, andLayoutType layout: LayoutType) -> CGFloat {
 
         switch layout {

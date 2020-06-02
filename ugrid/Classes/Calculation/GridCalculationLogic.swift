@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridCalculationLogic: IGridCalculation {
+final class GridCalculationLogic: IGridCalculation {
 
     // MARK: - private vars
     private var _repo: IGridSizeRepository!

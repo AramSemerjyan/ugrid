@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Layout {
+final class Layout {
 
     private var _collectionView: UICollectionView!
     private var _direction: UICollectionView.ScrollDirection!

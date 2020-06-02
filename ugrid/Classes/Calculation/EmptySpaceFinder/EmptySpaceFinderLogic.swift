@@ -17,7 +17,7 @@ class EmptySpaceFinder {
     }
 }
 
-class VerticalEmptySpaceFinder: EmptySpaceFinder { }
+final class VerticalEmptySpaceFinder: EmptySpaceFinder { }
 
 extension VerticalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
     func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes], forGridSize size: CGSize, startCoord: CGFloat) -> CGRect {
@@ -63,7 +63,7 @@ extension VerticalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
     }
 }
 
-class HorizontalEmptySpaceFinder: EmptySpaceFinder { }
+final class HorizontalEmptySpaceFinder: EmptySpaceFinder { }
 
 extension HorizontalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
     func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes], forGridSize size: CGSize, startCoord: CGFloat) -> CGRect {

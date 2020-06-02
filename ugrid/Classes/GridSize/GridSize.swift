@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridSize {
+final class GridSize {
     private var _layoutType: LayoutType
     private var _layout: ILayout
     private var _gridInRow: IGridItemsInRow
