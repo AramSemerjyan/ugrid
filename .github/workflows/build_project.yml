@@ -20,12 +20,12 @@ jobs:
     - name: List items
       run: ls Example/
 
-    - name: Install Cocoapods
-      run: gem install cocoapods
+#     - name: Install Cocoapods
+#       run: gem install cocoapods
       
-    - name: Install pods
-      run: pod install
+#     - name: Install pods
+#       run: pod install
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild -workspace "ugrid.xcworkspace" -list -configuration Debug
+        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -list -configuration Debug
