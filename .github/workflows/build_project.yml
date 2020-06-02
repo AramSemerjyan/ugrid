@@ -23,6 +23,9 @@ jobs:
     - name: Print dirrectory
       run: pwd
 
+    - name: List items
+      run: ls
+
     - name: Install Cocoapods
       run: gem install cocoapods
       
