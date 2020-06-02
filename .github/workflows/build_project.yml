@@ -28,4 +28,4 @@ jobs:
       
     - name: Build
       run: |
-        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -list -configuration Debug | xcpretty --color --simple
+        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -configuration Debug | xcpretty --color --simple
