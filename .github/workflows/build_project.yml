@@ -1,0 +1,31 @@
+name: Swift
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=11.0,name=iPhone 11 Pro Max']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: List items
+      run: ls Example/
+
+#     - name: Install Cocoapods
+#       run: gem install cocoapods
+      
+#     - name: Install pods
+#       run: pod install
+      
+    - name: Build
+      run: |
+        set -o pipefail && xcodebuild -workspace "Example/ugrid.xcworkspace" -list -configuration Debug | xcpretty --color --simple
