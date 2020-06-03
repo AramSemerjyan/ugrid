@@ -39,6 +39,10 @@ final class GridSize {
 }
 
 extension GridSize: IGridSize {
+    func countInRow(forItems itemType: SizeType) -> Int {
+        return Int(_gridInRow.itemsInRow(forSizeType: itemType, andLayoutType: _layoutType))
+    }
+
     func setType(_ layoutType: LayoutType) {
         _layoutType = layoutType
     }
@@ -67,13 +71,18 @@ extension GridSize: IGridSize {
     }
 
     var bigGrid: CGSize {
-        let itemWidth = getItemWidth(forGridSize: .big)
+        var itemWidth = getItemWidth(forGridSize: .big)
 
         switch _layoutType {
         case .less:
             return .init(width: itemWidth, height: middleGrid.height)
         case .more:
-            return .init(width: itemWidth * 6 / 9.1, height: middleGrid.height)
+
+            if _gridInRow.itemsInRow(forSizeType: .big, andLayoutType: _layoutType) == 1 {
+                itemWidth = itemWidth - getItemWidth(forGridSize: .middle) - 10
+            }
+
+            return .init(width: itemWidth, height: middleGrid.height)
         }
     }
 }

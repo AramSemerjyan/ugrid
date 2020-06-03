@@ -38,4 +38,8 @@ protocol IGridSize: IGridSizeConfigurable {
 
     func setType(_ layoutType: LayoutType)
     func getSize(forGridSizeType sizeType: SizeType) -> CGSize
+
+    //TODO: maybe that is not such a good idea to provide this function
+    // through IGridSize interface
+    func countInRow(forItems itemType: SizeType) -> Int
 }

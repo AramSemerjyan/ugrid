@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     // MARK: - private vars
     private var _dataSource: [Int] = Array(0...1000)
     private var _layout = UGridFlowLayout()
-    private var _layoutType: LayoutType = .less
+    private var _layoutType: LayoutType = .more
     private var _dirrection: UICollectionView.ScrollDirection = .vertical
 
     private var _dirrectionTitle: String {
@@ -83,6 +83,17 @@ extension ViewController: UICollectionViewDataSource {
 
         cell.backgroundColor = .init(red: (135 / 255), green: (206 / 255), blue: (250 / 255), alpha: 1)
 
+        if let label = cell.contentView.viewWithTag(32) as? UILabel {
+            label.text = "\(_dataSource[indexPath.row])"
+        } else {
+            let label = UILabel()
+            label.tag = 32
+            label.text = "\(_dataSource[indexPath.row])"
+            label.sizeToFit()
+
+            cell.contentView.addSubview(label)
+        }
+
         return cell
     }
 }
@@ -111,9 +122,9 @@ class CustomSizeCountInrow: IGridItemsInRow {
         case .more:
             switch size {
             case .small:
-                return 6
+                return 8
             case .middle:
-                return 3
+                return 4
             case .big:
                 return 1
             }

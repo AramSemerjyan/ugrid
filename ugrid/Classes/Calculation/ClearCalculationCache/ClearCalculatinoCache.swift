@@ -20,14 +20,16 @@ class ClearCompleteRow {
 final class ClearVerticalCompleteRow: ClearCompleteRow { }
 
 extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
-    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-        if (frame.maxX + gridSize.smallGrid.width) >= (layout.layoutWidth - layout.inset.left) {
-            let height = attributes.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
+    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], completion: @escaping (CGFloat) -> Void) {
+        let itemsCount = gridSize.countInRow(forItems: .small)
+        let suffix = attributes.suffix(itemsCount)
 
-            // Check that heigh for all items in the line is same
-            // if it's not, that means that there can be an empy space to place new item
-            if height == frame.maxY {
-                completion(height)
+        if suffix.count == itemsCount {
+            let maxY = suffix.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame.maxY ?? 0
+            let minY = suffix.sorted { $0.frame.maxY < $1.frame.maxY }.first?.frame.maxY ?? 0
+
+            if minY == maxY {
+                completion(maxY)
             }
         }
     }
@@ -36,14 +38,16 @@ extension ClearVerticalCompleteRow: IGridCompleteRowFinder {
 final class ClearHorizontalCompleteRow: ClearCompleteRow { }
 
 extension ClearHorizontalCompleteRow: IGridCompleteRowFinder {
-    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], beforeFrame frame: CGRect, completion: @escaping (CGFloat) -> Void) {
-        if (frame.maxY + gridSize.smallGrid.height) >= (layout.layoutHeight - layout.inset.left) {
-            let width = attributes.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
+    func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes], completion: @escaping (CGFloat) -> Void) {
+        let itemsCount = gridSize.countInRow(forItems: .small)
+        let suffix = attributes.suffix(itemsCount)
 
-            // Check that heigh for all items in the line is same
-            // if it's not, that means that there can be an empy space to place new item
-            if width == frame.maxX {
-                completion(width)
+        if suffix.count == itemsCount {
+            let maxX = suffix.sorted { $0.frame.maxX > $1.frame.maxX }.first?.frame.maxX ?? 0
+            let minX = suffix.sorted { $0.frame.maxX < $1.frame.maxX }.first?.frame.maxX ?? 0
+
+            if minX == maxX {
+                completion(maxX)
             }
         }
     }

@@ -10,7 +10,6 @@ import UIKit
 protocol IGridCompleteRowFinder {
 
     func findCompleteRows(inAttributes attributes: [UICollectionViewLayoutAttributes],
-                          beforeFrame frame: CGRect,
                           completion: @escaping (CGFloat) -> Void
     )
 }

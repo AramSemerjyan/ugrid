@@ -85,18 +85,18 @@ final class GridCalculationLogic: IGridCalculation {
 
             a.frame = spaceRect
 
+            attributesInRow.append(a)
+
             // This will decrease complexity
             // If there is fully complete line, like:
             // if grid type is 'less', and there is [small, small, small, small] in one line
             // this will remove all four attributes, because there is no point for having them
             // while looking for empty space
-            _findCompleteRows[_layout.scrollingDirection.rawValue]?.findCompleteRows(inAttributes: attributesInRow, beforeFrame: a.frame, completion: { (v) in
+            _findCompleteRows[_layout.scrollingDirection.rawValue]?.findCompleteRows(inAttributes: attributesInRow, completion: { (v) in
                 attributesInRow.removeAll()
 
                 startCoord = v
             })
-
-            attributesInRow.append(a)
         }
 
         if _layout.scrollingDirection == .vertical {
