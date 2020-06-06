@@ -1,6 +1,6 @@
 //
 //  IGridItemsInRow.swift
-//  Pods-ugrid_Example
+//  ugrid
 //
 //  Created by Aram Semerjyan on 5/30/20.
 //
