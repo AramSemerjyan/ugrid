@@ -18,4 +18,6 @@ public protocol IGridSizeRepository {
     func size(forIndexPath indexPath: IndexPath) -> SizeType
     func set(size: SizeType, forIndexPath indexPath: IndexPath)
     func swap(from: IndexPath, to: IndexPath)
+
+    func clearStore()
 }

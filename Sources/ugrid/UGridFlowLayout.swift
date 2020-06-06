@@ -61,6 +61,11 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
         }
     }
 
+    /// Remove all saved sizes for IndexPaths
+    public func resetItemsSizes() {
+        _repo.clearStore()
+    }
+
     func logging(_ type: LoggingType) {
         _loggign = type
     }
