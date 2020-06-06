@@ -10,14 +10,15 @@ import UIKit
 
 final class Layout {
 
+    var scrollingDirection: UICollectionView.ScrollDirection
+
     private var _collectionView: UICollectionView!
-    private var _direction: UICollectionView.ScrollDirection!
 
     init(_ collectionView: UICollectionView,
          scrollingDirrection direction: UICollectionView.ScrollDirection = .vertical
     ) {
         _collectionView = collectionView
-        _direction = direction
+        scrollingDirection = direction
     }
 }
 
@@ -32,12 +33,6 @@ extension Layout: ILayout {
 
     var layoutHeight: CGFloat {
         _collectionView.frame.height
-    }
-
-    var scrollingDirection: UICollectionView.ScrollDirection {
-        set { _direction = newValue }
-
-        get { _direction }
     }
 }
 
