@@ -115,6 +115,20 @@ After this every new added item will have `middle` size instead default `small`.
 #### Store changes
 For simplicity `UserDefaults` is used to save size for each cell index path. If you still want to handle storing by yourself You want to check [Change behaviour section](#change-behaviour)
 
+If you want to clear all saved item sizes call `resetItemsSizes()` on `UGridFlowLayout` instance:
+
+```swift
+...
+   override func viewDidLoad() {
+      ...
+      
+      _layout.resetItemsSizes()
+      
+      ...
+   }
+...
+```
+
 #### Change behaviour
 UGrid is still in development. It do it's best to bring the fastest calculation time for reordering cells, simplest implementation and usability. Though if you have a better calculation idea (which is most likely) you can create your own calculation class by simply adopting to `IGridCalculation` protocol and use `setCalculationLogic(_:)` on `UGridFlowLayout` instance to change calculation logic.
 Also if you like to store sizes on your own, you can adopt to `IGridSizeRepository` protocol and set new storing mechanism by calling `setSizeRepository(_:)` on on `UGridFlowLayout` instance.
