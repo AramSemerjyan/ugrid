@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol IConfigure {
+public protocol ICustomizable {
     func setCalculationLogic(_ logic: IGridCalculation)
     func setSizeRepository(_ repo: IGridSizeRepository)
+    func setGridItemsInRow(_ itemsInRow: IGridItemsInRow)
 }

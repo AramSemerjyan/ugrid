@@ -21,7 +21,7 @@
 		550CB089196CED63137AC7848E4ECA63 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228450260FAA3058D1F5D1F767423E8 /* Layout.swift */; };
 		74E37054E98B0137B89205D439DC02FE /* IGridSizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF9D01C3959A950047BA569B6BEDC69 /* IGridSizeRepository.swift */; };
 		83C0E3AC45E0E555422B38748A8C74A9 /* Pods-ugrid_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8549574AF27D5C5457F2F3F5B3293ADC /* Pods-ugrid_Example-dummy.m */; };
-		8A846CF6DE392B49E3C8BFDF907A8216 /* IConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707FE8078E85C98F9E2861E56F04462 /* IConfigure.swift */; };
+		8A846CF6DE392B49E3C8BFDF907A8216 /* ICustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707FE8078E85C98F9E2861E56F04462 /* ICustomizable.swift */; };
 		9623B970B341167F824F9ED8AECE6B62 /* IGridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6AEB5BF29BCE67771AB16A0ECFDEAE /* IGridSize.swift */; };
 		A773896DB6D11CB292C751CD4D0EEB79 /* IGridCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678B49B84E1171DDBBD19D4ED1ABB07 /* IGridCalculation.swift */; };
 		AA1ECDA027EED3240E61B4502971B61A /* ugrid-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB6D2910FA8316261B18C1175BC44E2 /* ugrid-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,7 +55,7 @@
 		0228450260FAA3058D1F5D1F767423E8 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		0678B49B84E1171DDBBD19D4ED1ABB07 /* IGridCalculation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridCalculation.swift; sourceTree = "<group>"; };
 		12C818ADD198FFD9A958C5291CFE8F51 /* GridItemsInRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridItemsInRow.swift; sourceTree = "<group>"; };
-		1C01199DB288FF4B0D170A3AE9545163 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1C01199DB288FF4B0D170A3AE9545163 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1C577FED386B54DC7CE0F6CEA5855DFC /* IGridItemsInRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridItemsInRow.swift; sourceTree = "<group>"; };
 		1E6176E335942AEFD0CC9270E55F5820 /* Pods-ugrid_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ugrid_Example-Info.plist"; sourceTree = "<group>"; };
 		1F7CD83C0BF14B9F13F37A91B71D29D4 /* Pods-ugrid_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ugrid_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -71,25 +71,25 @@
 		514771AF25CE0C88EBB6862FA9613C05 /* ugrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ugrid.modulemap; sourceTree = "<group>"; };
 		54E02CC9473D365084E75A0CC08404B0 /* Pods-ugrid_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ugrid_Tests.modulemap"; sourceTree = "<group>"; };
 		5720E077AD3FFC010AE047D8AFADC816 /* Pods-ugrid_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ugrid_Tests-Info.plist"; sourceTree = "<group>"; };
-		5B8A22968DBD4ED9DA66630DCF415C5D /* Pods_ugrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ugrid_Tests.framework; path = "Pods-ugrid_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8A22968DBD4ED9DA66630DCF415C5D /* Pods_ugrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C97FFCBF21868B2B717462580D726A1 /* EmptySpaceFinderLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptySpaceFinderLogic.swift; sourceTree = "<group>"; };
 		65666C2CE1464536B993C6735DF8AE14 /* IGridCompleteRowFinder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridCompleteRowFinder.swift; sourceTree = "<group>"; };
 		691139D605C03C6656E66DEED7455E10 /* Pods-ugrid_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ugrid_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		693E5C29A9CBD5D185FA5B58BF6A77C1 /* UGridFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UGridFlowLayout.swift; path = Sources/ugrid/UGridFlowLayout.swift; sourceTree = "<group>"; };
 		6BB84E8361E709B0950297AD8B229E04 /* ILayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ILayout.swift; sourceTree = "<group>"; };
 		6DF2F2EF2A580E42C5B7377081EC4647 /* GridSizeRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridSizeRepository.swift; sourceTree = "<group>"; };
-		7D384AC905536F5D5F45F30678155FA7 /* ugrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ugrid.framework; path = ugrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81B21562C4B99DAB6E9403CF3B4CEAA9 /* ugrid.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ugrid.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7D384AC905536F5D5F45F30678155FA7 /* ugrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ugrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B21562C4B99DAB6E9403CF3B4CEAA9 /* ugrid.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ugrid.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8549574AF27D5C5457F2F3F5B3293ADC /* Pods-ugrid_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ugrid_Example-dummy.m"; sourceTree = "<group>"; };
 		85E3FCFF64A7C4A7347A61C63FC7D1AB /* ugrid-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ugrid-Info.plist"; sourceTree = "<group>"; };
 		8F169AFAD5996A8602936EC2D20535BF /* Pods-ugrid_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ugrid_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9776D2FC4F6B0ACE55A2FD368A8638B8 /* Pods-ugrid_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ugrid_Example-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A28D683FA27285A53BDD1DDBE70CCA69 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ugrid_Example.framework; path = "Pods-ugrid_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A465D85E58387BF5791E196CB39673C8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A28D683FA27285A53BDD1DDBE70CCA69 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A465D85E58387BF5791E196CB39673C8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AE6AEB5BF29BCE67771AB16A0ECFDEAE /* IGridSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridSize.swift; sourceTree = "<group>"; };
 		B6B0263B93778A27470F9D6E02DB1436 /* Pods-ugrid_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ugrid_Example-frameworks.sh"; sourceTree = "<group>"; };
-		B707FE8078E85C98F9E2861E56F04462 /* IConfigure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IConfigure.swift; sourceTree = "<group>"; };
+		B707FE8078E85C98F9E2861E56F04462 /* ICustomizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ICustomizable.swift; sourceTree = "<group>"; };
 		C27BDAD47AF887C554468A2C10DA3CF2 /* ClearCalculatinoCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClearCalculatinoCache.swift; sourceTree = "<group>"; };
 		DC524A57DD4D7A31A1A6AEADAD4EC14A /* IGridCalculationLogicFindEmptySpace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IGridCalculationLogicFindEmptySpace.swift; sourceTree = "<group>"; };
 		E0A62E2D7C7FBAD558CD6137EE717E74 /* Pods-ugrid_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ugrid_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		15553392026769F5B7D4E9CDD1AC6472 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
-				B707FE8078E85C98F9E2861E56F04462 /* IConfigure.swift */,
+				B707FE8078E85C98F9E2861E56F04462 /* ICustomizable.swift */,
 			);
 			name = Configure;
 			path = Sources/ugrid/Configure;
@@ -168,7 +168,6 @@
 				C27BDAD47AF887C554468A2C10DA3CF2 /* ClearCalculatinoCache.swift */,
 				65666C2CE1464536B993C6735DF8AE14 /* IGridCompleteRowFinder.swift */,
 			);
-			name = ClearCalculationCache;
 			path = ClearCalculationCache;
 			sourceTree = "<group>";
 		};
@@ -236,7 +235,6 @@
 				12C818ADD198FFD9A958C5291CFE8F51 /* GridItemsInRow.swift */,
 				1C577FED386B54DC7CE0F6CEA5855DFC /* IGridItemsInRow.swift */,
 			);
-			name = GridItemCount;
 			path = GridItemCount;
 			sourceTree = "<group>";
 		};
@@ -254,7 +252,6 @@
 				5C97FFCBF21868B2B717462580D726A1 /* EmptySpaceFinderLogic.swift */,
 				DC524A57DD4D7A31A1A6AEADAD4EC14A /* IGridCalculationLogicFindEmptySpace.swift */,
 			);
-			name = EmptySpaceFinder;
 			path = EmptySpaceFinder;
 			sourceTree = "<group>";
 		};
@@ -506,7 +503,7 @@
 				F143ED1C48F89428C3C5637561BE367E /* GridItemsInRow.swift in Sources */,
 				4AD439ECC544D8C76049B8C8D74F14B2 /* GridSize.swift in Sources */,
 				C387579053C73DACDFAE688D672866EE /* GridSizeRepository.swift in Sources */,
-				8A846CF6DE392B49E3C8BFDF907A8216 /* IConfigure.swift in Sources */,
+				8A846CF6DE392B49E3C8BFDF907A8216 /* ICustomizable.swift in Sources */,
 				A773896DB6D11CB292C751CD4D0EEB79 /* IGridCalculation.swift in Sources */,
 				BE98DF3A93432969B78DAE2669BC55DE /* IGridCalculationLogicFindEmptySpace.swift in Sources */,
 				4775847BAECB9BD8AFE77C6E562524A7 /* IGridCompleteRowFinder.swift in Sources */,
@@ -627,8 +624,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -10,6 +10,10 @@ import UIKit
 
 public class UGridFlowLayout: UICollectionViewFlowLayout {
 
+    private enum KeyPaths: String {
+        case dirrectionChagne = "scrollDirection"
+    }
+
     enum LoggingType {
         case enable
         case disable
@@ -26,12 +30,24 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     // MARK: - public funcs
+
+    /// Toggle between `more` and `less` cases.
+    /// Based on `IGridItemsInRow` in one row will be shown items with count corresponding for the
+    /// `LayoutType` case. On `LayoutType` call `.toggle()` to switch between enum cases
+    ///
+    /// - Parameters:
+    ///   - type: enum case from `LayoutType`
     public func setType(_ type: LayoutType) {
         self._calculation.gridType = type
 
         invalidateLayout()
     }
 
+    /// Toggle Grid item sizes. Get old size, switch to next corresponding size, save using
+    /// instance that conforms to `IGridSizeRepository` and perform UI changes
+    ///
+    /// - Parameters:
+    ///   - indexPath: `IndexPath` of the item to be changed
     public func toggleSize(forIndexPath indexPath: IndexPath) {
         var oldSize = _repo.size(forIndexPath: indexPath)
         oldSize.toggole()
@@ -209,7 +225,10 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "scrollDirection", let newValue = change?[NSKeyValueChangeKey.newKey] as? Int, let newDirection = UICollectionView.ScrollDirection.init(rawValue: newValue) {
+        if keyPath == KeyPaths.dirrectionChagne.rawValue,
+            let newValue = change?[NSKeyValueChangeKey.newKey] as? Int,
+            let newDirection = UICollectionView.ScrollDirection.init(rawValue: newValue)
+        {
             _layout.scrollingDirection = newDirection
 
             invalidateLayout()
@@ -222,19 +241,37 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     private func addScrollingDirrectionObserver() {
-        self.addObserver(self, forKeyPath: "scrollDirection", options: .new, context: nil)
+        self.addObserver(self, forKeyPath: KeyPaths.dirrectionChagne.rawValue, options: .new, context: nil)
     }
 }
 
-extension UGridFlowLayout: IConfigure {
+extension UGridFlowLayout: ICustomizable {
+
+    /// Logic that is used to position items on layout.
+    /// Will be used every time on `UICollectionViewFlowLayout` `prepare` call
+    ///
+    /// - Parameters:
+    ///   - logic: class or struct that conforms to `IGridCalculation`
     public func setCalculationLogic(_ logic: IGridCalculation) {
         _calculation = logic
     }
 
+    /// Persistence store to cache sizes for each `IndexPath`
+    ///
+    /// - Parameters:
+    ///   - repo: class or struct that conforms to `IGridSizeRepository`
     public func setSizeRepository(_ repo: IGridSizeRepository) {
         _repo = repo
     }
 
+    /// Represents how many items should be in one row.
+    /// Differenct items count is used for `LayoutType` `Horizontal`
+    /// and `Vertical`. If `scrollingDirrection` is `Horizontal` items positioned at the same `X`
+    /// coordinate will be considered as a row, and if it is `Vertical` items positioned at the same `Y`
+    /// coordinated wil lbe considered as a row
+    ///
+    /// - Parameters:
+    ///   - itemsInRow: class or struct that conforms to `IGridItemsInRow`
     public func setGridItemsInRow(_ itemsInRow: IGridItemsInRow) {
         _gridInRow.setGirdItemsInRow(itemsInRow)
     }
