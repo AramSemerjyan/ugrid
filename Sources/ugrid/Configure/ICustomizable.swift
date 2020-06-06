@@ -1,9 +1,9 @@
 //
 //  IConfigure.swift
-//  UDifferentSizeGridView
+//  ugrid
 //
 //  Created by Aram Semerjyan on 5/25/20.
-//  Copyright © 2020 home. All rights reserved.
+//  Copyright © 2020 BugCreator. All rights reserved.
 //
 
 import UIKit
