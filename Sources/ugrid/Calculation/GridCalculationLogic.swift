@@ -26,8 +26,8 @@ final class GridCalculationLogic: IGridCalculation {
     // if there is rows, they should be removed from the array of attributes to simplify calculation and increase speed
     private lazy var _findCompleteRows: [Int: IGridCompleteRowFinder] = {
         [
-            UICollectionView.ScrollDirection.vertical.rawValue: ClearVerticalCompleteRow(self._layout, gridSize: self._gridSize),
-            UICollectionView.ScrollDirection.horizontal.rawValue: ClearHorizontalCompleteRow(self._layout, gridSize: self._gridSize)
+            UICollectionView.ScrollDirection.vertical.rawValue: ClearVerticalCompleteRow(gridSize: self._gridSize),
+            UICollectionView.ScrollDirection.horizontal.rawValue: ClearHorizontalCompleteRow(gridSize: self._gridSize)
         ]
     }()
 
@@ -72,6 +72,7 @@ final class GridCalculationLogic: IGridCalculation {
 
         var attributesInRow = [UICollectionViewLayoutAttributes]()
 
+        // TODO: I don't like the idea of having start coordinate here
         // Y coord from where algorithm should start to look for empy space
         var startCoord: CGFloat = 0.0
 
@@ -79,7 +80,7 @@ final class GridCalculationLogic: IGridCalculation {
             let size: SizeType = sizes[a.indexPath] ?? .small
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
-            //TODO: need to be reviewed
+            // TODO: need to be reviewed
             let spaceRect = _emptySpaceFinder[_layout.scrollingDirection.rawValue]?.findEmtpySpace(
                 withAttributes: attributesInRow,
                 forGridSize: a.frame.size,
@@ -104,6 +105,7 @@ final class GridCalculationLogic: IGridCalculation {
             })
         }
 
+        // TODO: need to be revied
         if _layout.scrollingDirection == .vertical {
             let blockPoint = attributesInRow.sorted { $0.frame.maxY > $1.frame.maxY }.first?.frame
 

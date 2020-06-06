@@ -7,12 +7,11 @@
 
 import UIKit
 
+// TODO: maybe it'll be possible to get rid of the GridSize coupling
 class ClearCompleteRow {
-    private(set) var layout: ILayoutScreen
     private(set) var gridSize: IGridSize
 
-    init(_ layout: ILayoutScreen, gridSize: IGridSize) {
-        self.layout = layout
+    init(gridSize: IGridSize) {
         self.gridSize = gridSize
     }
 }

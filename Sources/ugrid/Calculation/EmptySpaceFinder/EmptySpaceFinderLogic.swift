@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: maybe it'll be possible to get rid of GridSize and LayoutScreen coupling
 class EmptySpaceFinder {
     private(set) var layout: ILayoutScreen
     private(set) var gridSize: IGridSize
@@ -17,6 +18,8 @@ class EmptySpaceFinder {
     }
 }
 
+// TODO: Maybe it'll be possible to separate part of the logic that remains same for Horizontal and Vertical
+// cases. But still, it is right to have two different classes.
 final class VerticalEmptySpaceFinder: EmptySpaceFinder { }
 
 extension VerticalEmptySpaceFinder: IGridCalculationLogicFindEmptySpace {
