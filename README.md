@@ -16,6 +16,11 @@
         <img src="https://img.shields.io/cocoapods/p/ugrid.svg?style=flat"
             alt="Platform">
     </a>
+   
+   <a href="https://swift.org/package-manager/">
+      <img src="https://img.shields.io/badge/SPM-Compatible-brightgreen.svg?style=flat"
+           alt="SPM compatible">
+   </a>
 </p>
 
 ## Example
