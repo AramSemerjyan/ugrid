@@ -12,4 +12,5 @@ public protocol ICustomizable {
     func setCalculationLogic(_ logic: IGridCalculation)
     func setSizeRepository(_ repo: IGridSizeRepository)
     func setGridItemsInRow(_ itemsInRow: IGridItemsInRow)
+    func setDefaultGridSize(_ size: SizeType)
 }

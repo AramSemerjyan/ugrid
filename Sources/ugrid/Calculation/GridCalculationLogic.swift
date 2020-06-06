@@ -80,8 +80,11 @@ final class GridCalculationLogic: IGridCalculation {
             a.frame.size = _gridSize.getSize(forGridSizeType: size)
 
             //TODO: need to be reviewed
-            let spaceRect = _emptySpaceFinder[_layout.scrollingDirection.rawValue]?
-                .findEmtpySpace(withAttributes: attributesInRow, forGridSize: a.frame.size, startCoord: startCoord) ?? .zero
+            let spaceRect = _emptySpaceFinder[_layout.scrollingDirection.rawValue]?.findEmtpySpace(
+                withAttributes: attributesInRow,
+                forGridSize: a.frame.size,
+                startCoord: startCoord
+                ) ?? .zero
 
             a.frame = spaceRect
 
@@ -92,10 +95,12 @@ final class GridCalculationLogic: IGridCalculation {
             // if grid type is 'less', and there is [small, small, small, small] in one line
             // this will remove all four attributes, because there is no point for having them
             // while looking for empty space
-            _findCompleteRows[_layout.scrollingDirection.rawValue]?.findCompleteRows(inAttributes: attributesInRow, completion: { (v) in
-                attributesInRow.removeAll()
+            _findCompleteRows[_layout.scrollingDirection.rawValue]?.findCompleteRows(
+                inAttributes: attributesInRow,
+                completion: { (v) in
+                    attributesInRow.removeAll()
 
-                startCoord = v
+                    startCoord = v
             })
         }
 

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeDirrectionItem: UIBarButtonItem!
 
     // MARK: - private vars
-    private var _dataSource: [Int] = Array(0...1000)
+    private var _dataSource: [Int] = Array(0...5)
     private var _layout = UGridFlowLayout()
     private var _layoutType: LayoutType = .more
     private var _dirrection: UICollectionView.ScrollDirection = .vertical
@@ -36,12 +36,14 @@ class ViewController: UIViewController {
 
     // MARK: - private funcs
     private func setUpNavigationBar() {
-        changeGridTypeItem.title = LayoutType.more.rawValue
+        changeGridTypeItem.title = LayoutType.less.rawValue
         changeDirrectionItem.title = _dirrectionTitle
     }
 
     private func setUpCollectionView() {
         collectionView.collectionViewLayout = _layout
+
+        collectionView.register(UINib(nibName: "UGridCell", bundle: nil), forCellWithReuseIdentifier: "grid_cell")
 
         _layout.setGridItemsInRow(CustomSizeCountInrow())
         _layout.scrollDirection = _dirrection
@@ -71,6 +73,13 @@ class ViewController: UIViewController {
 
         _layout.setType(_layoutType)
     }
+
+    @IBAction func addNewItem(_ sender: Any) {
+        if let last = _dataSource.last {
+            _dataSource.append(last + 1)
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -79,22 +88,15 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gridCell", for: indexPath)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "grid_cell", for: indexPath) as? UGridCell {
+            
+            cell.backgroundColor = .uBlue
+            cell.numberLabel.text = _dataSource[indexPath.row].stringValue
 
-        cell.backgroundColor = .init(red: (135 / 255), green: (206 / 255), blue: (250 / 255), alpha: 1)
-
-        if let label = cell.contentView.viewWithTag(32) as? UILabel {
-            label.text = "\(_dataSource[indexPath.row])"
+            return cell
         } else {
-            let label = UILabel()
-            label.tag = 32
-            label.text = "\(_dataSource[indexPath.row])"
-            label.sizeToFit()
-
-            cell.contentView.addSubview(label)
+            return UICollectionViewCell()
         }
-
-        return cell
     }
 }
 

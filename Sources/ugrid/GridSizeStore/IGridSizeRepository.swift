@@ -12,6 +12,9 @@ import UIKit
 // and retriving size for item with index path
 // currently UserDefaults is used as a store
 public protocol IGridSizeRepository {
+
+    var defaultSize: SizeType { get set }
+
     func size(forIndexPath indexPath: IndexPath) -> SizeType
     func set(size: SizeType, forIndexPath indexPath: IndexPath)
     func swap(from: IndexPath, to: IndexPath)

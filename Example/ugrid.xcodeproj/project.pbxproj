@@ -15,6 +15,10 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		61E68572BC65D1B2284DD3A1 /* Pods_ugrid_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1755B67ED67597C6F0BC43 /* Pods_ugrid_Example.framework */; };
 		8E0D5C4853C193E79F025A58 /* Pods_ugrid_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECB0D8D3708408A1047043 /* Pods_ugrid_Tests.framework */; };
+		AE05D290248BEE4A000AF739 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05D28F248BEE4A000AF739 /* UIColorExtension.swift */; };
+		AE05D294248BEEC0000AF739 /* UGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05D292248BEEC0000AF739 /* UGridCell.swift */; };
+		AE05D295248BEEC0000AF739 /* UGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE05D293248BEEC0000AF739 /* UGridCell.xib */; };
+		AE05D299248BEF8B000AF739 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05D298248BEF8B000AF739 /* IntExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		8B1755B67ED67597C6F0BC43 /* Pods_ugrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CECB0D8D3708408A1047043 /* Pods_ugrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ugrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E85FD51DC067FC739189703 /* Pods-ugrid_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ugrid_Example.release.xcconfig"; path = "Target Support Files/Pods-ugrid_Example/Pods-ugrid_Example.release.xcconfig"; sourceTree = "<group>"; };
+		AE05D28F248BEE4A000AF739 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		AE05D292248BEEC0000AF739 /* UGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UGridCell.swift; sourceTree = "<group>"; };
+		AE05D293248BEEC0000AF739 /* UGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UGridCell.xib; sourceTree = "<group>"; };
+		AE05D298248BEF8B000AF739 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		CB641731905501555368C327 /* Pods-ugrid_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ugrid_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ugrid_Tests/Pods-ugrid_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +101,8 @@
 		607FACD21AFB9204008FA782 /* Example for ugrid */ = {
 			isa = PBXGroup;
 			children = (
+				AE05D291248BEE7F000AF739 /* Cell */,
+				AE05D28E248BEE3A000AF739 /* Extension */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -137,6 +147,40 @@
 				6BC097C9EC7F451E75ABCF53 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		AE05D28E248BEE3A000AF739 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AE05D297248BEF7F000AF739 /* Int */,
+				AE05D296248BEF75000AF739 /* UIColor */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		AE05D291248BEE7F000AF739 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE05D292248BEEC0000AF739 /* UGridCell.swift */,
+				AE05D293248BEEC0000AF739 /* UGridCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		AE05D296248BEF75000AF739 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				AE05D28F248BEE4A000AF739 /* UIColorExtension.swift */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
+		AE05D297248BEF7F000AF739 /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				AE05D298248BEF8B000AF739 /* IntExtension.swift */,
+			);
+			name = Int;
 			sourceTree = "<group>";
 		};
 		BF912EF1B99FFCA9A60AEA04 /* Frameworks */ = {
@@ -248,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				AE05D295248BEEC0000AF739 /* UGridCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -333,7 +378,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				AE05D294248BEEC0000AF739 /* UGridCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				AE05D299248BEF8B000AF739 /* IntExtension.swift in Sources */,
+				AE05D290248BEE4A000AF739 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

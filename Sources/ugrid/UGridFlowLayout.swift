@@ -275,4 +275,13 @@ extension UGridFlowLayout: ICustomizable {
     public func setGridItemsInRow(_ itemsInRow: IGridItemsInRow) {
         _gridInRow.setGirdItemsInRow(itemsInRow)
     }
+
+    /// `SizeType` value to set if there isn't any size info about `IndexPath` yet in the store
+    /// Currently defualt value is `small`
+    ///
+    /// - Parameters:
+    ///   - size: Case of the `SizeType` enum
+    public func setDefaultGridSize(_ size: SizeType) {
+        _repo.defaultSize = size
+    }
 }

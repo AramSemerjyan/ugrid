@@ -8,15 +8,26 @@
 
 import UIKit
 
-final class GridSizeRepository: IGridSizeRepository {
+final class GridSizeRepository {
     private var _repo = UserDefaults.standard
 
+    var defaultSize: SizeType = .small
+
+    // MARK: - private var
+    private func key(fromIndexPath indexPath: IndexPath) -> String {
+        return "r:\(indexPath.row)_s:\(indexPath.section)"
+    }
+}
+
+extension GridSizeRepository: IGridSizeRepository {
     func size(forIndexPath indexPath: IndexPath) -> SizeType {
         if let sizeString = _repo.string(forKey: key(fromIndexPath: indexPath)), let size = SizeType(rawValue: sizeString) {
             return size
         } else {
-            set(size: .small, forIndexPath: indexPath)
-            return .small
+
+            set(size: defaultSize, forIndexPath: indexPath)
+
+            return defaultSize
         }
     }
 
@@ -30,10 +41,5 @@ final class GridSizeRepository: IGridSizeRepository {
 
         set(size: fromSize, forIndexPath: to)
         set(size: toSize, forIndexPath: from)
-    }
-
-    // MARK: - private var
-    private func key(fromIndexPath indexPath: IndexPath) -> String {
-        return "r:\(indexPath.row)_s:\(indexPath.section)"
     }
 }
