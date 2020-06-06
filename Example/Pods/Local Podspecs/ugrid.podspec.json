@@ -19,6 +19,6 @@
     "ios": "11.0"
   },
   "swift_versions": "5.0",
-  "source_files": "ugrid/Classes/**/*",
+  "source_files": "Sources/ugrid/**/*",
   "swift_version": "5.0"
 }

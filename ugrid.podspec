@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'ugrid/Classes/**/*'
+  s.source_files = 'Sources/ugrid/**/*'
   
   # s.resource_bundles = {
   #   'ugrid' => ['ugrid/Assets/*.png']
