@@ -15,11 +15,7 @@ private extension IndexPath {
 }
 
 final class GridSizeRepository {
-
-    private enum Keys: String {
-        case sizes = "item_sizes_dict"
-    }
-
+    
     private var _repo = UserDefaults.standard
 
     var defaultSize: SizeType = .small
