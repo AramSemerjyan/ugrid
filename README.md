@@ -96,6 +96,22 @@ Just call `toggleSize(forIndexPath:)` On `UGridFlowLayout` instance. Layout will
 ...
 ```
 
+If there isn't any size info in the store for the item yet by default `small` size will be used. You can change default size by calling `setDefaultGridSize(_ size: SizeType)` on `UGridFlowLayout` instance:
+
+```swift
+...
+   override func viewDidLoad() {
+      ...
+      
+      _layout.setDefaultGridSize(.middle)
+      
+      ...
+   }
+...
+```
+
+After this every new added item will have `middle` size instead default `small`.
+
 #### Store changes
 For simplicity `UserDefaults` is used to save size for each cell index path. If you still want to handle storing by yourself You want to check [Change behaviour section](#change-behaviour)
 
