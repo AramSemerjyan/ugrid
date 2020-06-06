@@ -83,7 +83,7 @@ final class GridCalculationLogic: IGridCalculation {
             let spaceRect = _emptySpaceFinder[_layout.scrollingDirection.rawValue]?.findEmtpySpace(
                 withAttributes: attributesInRow,
                 forGridSize: a.frame.size,
-                startCoord: startCoord
+                startedFrom: startCoord
                 ) ?? .zero
 
             a.frame = spaceRect

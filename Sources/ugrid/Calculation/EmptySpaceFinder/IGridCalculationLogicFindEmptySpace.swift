@@ -10,6 +10,6 @@ import UIKit
 protocol IGridCalculationLogicFindEmptySpace {
     func findEmtpySpace(withAttributes attributes: [UICollectionViewLayoutAttributes],
                         forGridSize size: CGSize,
-                        startCoord: CGFloat
+                        startedFrom startCoord: CGFloat
     ) -> CGRect
 }
