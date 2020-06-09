@@ -33,7 +33,7 @@ UGrid offers three different sizes for cells. Toggle between them and let UGridF
 <img src="https://github.com/AramSemerjyan/ugrid/blob/master/Resources/grid_view_3.gif" width="300" height="680"/>
 
 ## Implementation
-Just assign instance of `UGridFlowLayout` to your collection view's `collectionViewLayout` property and you're good to go. If you want to toggle between size:
+Just assign instance of `UGridFlowLayout` to your collection view's `collectionViewLayout` property and you're good to go:
 
 ```swift
 import UIKit
@@ -72,9 +72,11 @@ Layout Types could be toggled by calling `setType(_:)` and passing spacific `Lay
    override func viewDidLoad() {
       ...
       
-      _layoutType = .less
+      _layoutType.toggle()
       
       _layout.setType(_layoutType)
+      
+      ...
    }
 ...
 ```
@@ -84,15 +86,9 @@ Just call `toggleSize(forIndexPath:)` On `UGridFlowLayout` instance. Layout will
 
 ```swift
 ...
-   override func viewDidLoad() {
-      ...
-      
-      _layoutType.toggle()
-      
-      _layout.setType(_layoutType)
-      
-      ...
-   }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        _layout.toggleSize(forIndexPath: indexPath)
+    }
 ...
 ```
 
@@ -110,10 +106,10 @@ If there isn't any size info in the store for the item yet by default `small` si
 ...
 ```
 
-After this every new added item will have `middle` size instead default `small`.
+After this every new added item will have `middle` size instead of default `small`.
 
 #### Store changes
-For simplicity `UserDefaults` is used to save size for each cell index path. If you still want to handle storing by yourself You want to check [Change behaviour section](#change-behaviour)
+For simplicity `UserDefaults` is used to save size for each cell index path. If you still want to handle storing yourself You want to check [Change behaviour section](#change-behaviour)
 
 If you want to clear all saved item sizes call `resetItemsSizes()` on `UGridFlowLayout` instance:
 
@@ -133,7 +129,7 @@ If you want to clear all saved item sizes call `resetItemsSizes()` on `UGridFlow
 UGrid is still in development. It do it's best to bring the fastest calculation time for reordering cells, simplest implementation and usability. Though if you have a better calculation idea (which is most likely) you can create your own calculation class by simply adopting to `IGridCalculation` protocol and use `setCalculationLogic(_:)` on `UGridFlowLayout` instance to change calculation logic.
 Also if you like to store sizes on your own, you can adopt to `IGridSizeRepository` protocol and set new storing mechanism by calling `setSizeRepository(_:)` on on `UGridFlowLayout` instance.
 
-To change grid items count in the row, simply create a class that comforms to `IGridItemsInRow` and set it to `UGridFlowLayout` instance. For exmaple, to have 3 items in the row for `less` mode instead of default 4, create a new class called `CustomSizeCountInrow`:
+To change grid items count in one row, simply create a class that comforms to `IGridItemsInRow` and set it to `UGridFlowLayout` instance. For exmaple, to have 3 items in one row for `less` mode instead of default 4, create a new class called `CustomSizeCountInrow`:
 
 ```swift
 class CustomSizeCountInrow: IGridItemsInRow {
