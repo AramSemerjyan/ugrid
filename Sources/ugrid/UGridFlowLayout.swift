@@ -128,6 +128,10 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
     private var _cachedAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
 
+    private var _cachedAttributesArray: [UICollectionViewLayoutAttributes] {
+        _cachedAttributes.values.sorted { $0.indexPath < $1.indexPath }
+    }
+
     private var _sizes = [IndexPath: SizeType]()
     private var _draggingLastIndexPath: IndexPath?
 
@@ -192,13 +196,7 @@ public class UGridFlowLayout: UICollectionViewFlowLayout {
 
     public override var collectionViewContentSize: CGSize {
 
-        var rect = _collectView.frame.size
-
-        if scrollDirection == .vertical {
-            rect.height = _calculation.furthestBlockRect.maxY
-        } else {
-            rect.width = _calculation.furthestBlockRect.maxX
-        }
+        let rect = _calculation.contentSize
 
         if _loggign == .enable {
             print("UGRID:: ContentSize: \(rect)")

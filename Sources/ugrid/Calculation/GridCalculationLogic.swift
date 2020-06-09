@@ -117,7 +117,15 @@ final class GridCalculationLogic: IGridCalculation {
 
             _furthestBlockRect = blockPoint ?? .zero
 
-            _contentSize = .init(width: _furthestBlockRect.maxX, height: _layout.layoutHeight)
+            /// ToDo: temprary fix.
+            /// if items size are same for one row `attributesInRow` array here doesn't have any items in it
+            /// so `_furthestBlockRect.maxX` is 0.0 and because of that collection view content size become 0.0
+            /// same issue doesn't appear for `vertical` scrolling, becuase in that case if `_furthestBlockRect.maxY`
+            /// is 0.0 app sets default height to screen height... iOS :/
+            /// it'll be good to review whole calculation logic decrease complexity and especially refactor this part
+            /// for setting content size
+            let width = _furthestBlockRect.maxX == 0.0 ? _layout.layoutWidth : _furthestBlockRect.maxX
+            _contentSize = .init(width: width, height: _layout.layoutHeight)
         }
 
         return attributes

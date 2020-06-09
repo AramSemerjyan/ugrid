@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         _dirrection == .vertical ? "Horizontal" : "Vertical"
     }
 
+    private var _layoutTypeTitle: String {
+        _layoutType == .less ? LayoutType.more.rawValue : LayoutType.less.rawValue
+    }
+
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +40,7 @@ class ViewController: UIViewController {
 
     // MARK: - private funcs
     private func setUpNavigationBar() {
-        changeGridTypeItem.title = LayoutType.less.rawValue
+        changeGridTypeItem.title = _layoutTypeTitle
         changeDirrectionItem.title = _dirrectionTitle
     }
 
@@ -55,11 +59,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeDirrection(_ sender: UIBarButtonItem) {
-        if _dirrection == .vertical {
-            _dirrection = .horizontal
-        } else {
-            _dirrection = .vertical
-        }
+        _dirrection.toggle()
 
         sender.title = _dirrectionTitle
 
@@ -67,11 +67,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeGridType(_ sender: UIBarButtonItem) {
-        sender.title = _layoutType.rawValue
-
         _layoutType.toggle()
-
         _layout.setType(_layoutType)
+
+        sender.title = _layoutTypeTitle
     }
 
     @IBAction func addNewItem(_ sender: Any) {
@@ -130,6 +129,16 @@ class CustomSizeCountInrow: IGridItemsInRow {
             case .big:
                 return 1
             }
+        }
+    }
+}
+
+private extension UICollectionView.ScrollDirection {
+    mutating func toggle() {
+        if self == .horizontal {
+            self = .vertical
+        } else {
+            self = .horizontal
         }
     }
 }
